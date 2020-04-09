@@ -48,6 +48,8 @@ A general accepted opinion is that PTFE lined throaths limits your tempetures bu
 
 # Firmware #
 
+This is the last frimware published by Robo3D for the R1 Plus. It was fixed to compile in newer versions of the Arduino IDE.<br>
+[Marlin 1.0](ROBO3DR1PLUSV2_9APR2020.zip)<br>
 
 
 # Tutorial and Mods #
