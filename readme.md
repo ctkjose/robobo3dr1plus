@@ -17,7 +17,7 @@ The R1+ may come with a RAMPS 1.3 or RAMPS 1.4 board. These two boards are almos
 The R1+ board is based on a [RAMPS 1.4.3](https://reprap.org/wiki/RAMPS_1.4) design.
 ![RAMPS WIRING](R1WIRINGDIAG.png)
 
-This board differes on the placement and labeling of some connectors may confuse people:
+This board has a different placement and labeling of some connectors and it may confuse people:
 
 On R1+ 1.4.3 board the fan connects to D10, which is a connector labeled "FAN0". This connector is actually connected to Arduino's PIN 9 like regular RAMPS.
 
