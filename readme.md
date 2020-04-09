@@ -37,7 +37,7 @@ Nozzles compatible with E3D V6 should also work with the stock hexagon hotend as
 ## Other Hotends ##
 
 The [filament throats](https://reprap.org/forum/read.php?14,846189,846189) may be full metal or PTFE (teflon) lined.
-A general accepted opinion is that PTFE lined throaths limits your tempetures but for most people the range is fine and may cause jams. Example hotends with teflon: models HE280 and E3D V6 clones may also use PTFE. When possible stick to all aluminum/metal.
+A general accepted opinion is that PTFE lined throaths limits your tempetures (but for most people working with PLA thats is fine) and may cause jams. Example hotends with teflon: models HE280 and E3D V6 clones may also use PTFE. When possible stick to all aluminum/metal.
 
 ### E3D V6 Hotend Upgrade ###
 
@@ -46,6 +46,10 @@ A general accepted opinion is that PTFE lined throaths limits your tempetures bu
 [Novice Expert Assemble Youtube Video](https://www.youtube.com/watch?v=0FB3MmgvWrw)<br>
 [Novice Expert Installation Youtube Video](https://www.youtube.com/watch?v=sZM6MIuPorQ)<br>
 
+# Power Supply #
+
+The R1+ uses a common 3D Printer Switching Power Supply 12V 30A (360W, 15A, 120V-AC), ease to find only if you serach for S-360-12.
+
 # Firmware #
 
 This is the last frimware published by Robo3D for the R1 Plus. It was fixed to compile in newer versions of the Arduino IDE.<br>
@@ -53,6 +57,8 @@ This is the last frimware published by Robo3D for the R1 Plus. It was fixed to c
 
 I have a project for a Marlin/RepRap like firmware which is especific for 3D printers built on RAMPS like the R1+. This version is much smaller easier to configure, supports a more modern G-CODE and allows for easier extensions by means of hooks.<br>
 [SRAM Frimware](https://github.com/ctkjose/R1PLUSFIRMWARE)<br>
+
+Good video on installing [Marling 1.1.9](https://www.youtube.com/watch?v=fSx7s1q_G-c&t=79s).
 
 # Tutorial and Mods #
 
