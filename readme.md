@@ -51,6 +51,8 @@ A general accepted opinion is that PTFE lined throaths limits your tempetures bu
 This is the last frimware published by Robo3D for the R1 Plus. It was fixed to compile in newer versions of the Arduino IDE.<br>
 [Marlin 1.0](ROBO3DR1PLUSV2_9APR2020.zip)<br>
 
+I have a project for a Marlin/RepRap like firmware which is especific for 3D printers built on RAMPS like the R1+. This version is much smaller easier to configure, supports a more modern G-CODE and allows for easier extensions by means of hooks.<br>
+[SRAM Frimware](https://github.com/ctkjose/R1PLUSFIRMWARE)<br>
 
 # Tutorial and Mods #
 
