@@ -14,7 +14,7 @@ The R1 uses a standard Arduino MEGA 2560 board.
 ## RAMPS Board ##
 The R1+ may come with a RAMPS 1.3 or RAMPS 1.4 board. These two boards are almost the same.
 
-The R1+ uses a [RAMPS 1.4](https://reprap.org/wiki/RAMPS_1.4) board.
+The R1+ uses a [RAMPS 1.4.3](https://reprap.org/wiki/RAMPS_1.4) board.
 ![RAMPS WIRING](R1WIRINGDIAG.png)
 
 The ramp board in your robo may have different connectors to a traditional RAMPS 1.4 that may confuse people:
