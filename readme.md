@@ -1,6 +1,6 @@
 # All things Robo3D R1 Plus #
 
-This is a collection of resources for [Robo3D R1 Plus]() owners.
+This is a collection of resources for [Robo3D R1 Plus]() owners in hope they can keep their printers supported and shugging on!
 
 
 # Specs and Parts #
