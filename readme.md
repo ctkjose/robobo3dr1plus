@@ -4,16 +4,24 @@ This is a collection of resources for [Robo3D R1 Plus]() owners.
 
 
 # Specs and Parts #
+
 The R1 is pretty much a traditional RAMPS 1.4 3D printer as such is fairly easy to find parts and hack it.
 
 ## Arduino Board ##
 
 The R1 uses a standard Arduino MEGA 2560 board.
 
-## RAMPS 1.4 ##
+## RAMPS Board ##
+The R1+ may come with a RAMPS 1.3 or RAMPS 1.4 board. These two boards are almost the same.
 
 The R1+ uses a [RAMPS 1.4](https://reprap.org/wiki/RAMPS_1.4) board.
 ![RAMPS WIRING](R1WIRINGDIAG.png)
+
+The ramp board in your robo may have different connectors to a traditional RAMPS 1.4 that may confuse people:
+
+On R1+ 1.4.3 board the fan connects to D10, which is a connector labeled "FAN0". This connector is actually connected to Arduino's PIN 9 like regular RAMPS.
+
+On R1+ 1.4.3 board the extruder heater is connected to the plug labeled D9. This connector behaves like the original D10 of RAMPS and still responds to Arduino's PIN 10.
 
 ## Hot End ##
 
