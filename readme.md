@@ -34,6 +34,8 @@ Available at: [reprapdiscount](http://www.reprapdiscount.com/hotends/67-hexagon-
 
 Nozzles compatible with E3D V6 should also work with the stock hexagon hotend as long as its for 1.75mm filament.
 
+The nozzle to bed distance is 0.9mm.
+
 ## Other Hotends ##
 
 The [filament throats](https://reprap.org/forum/read.php?14,846189,846189) may be full metal or PTFE (teflon) lined.
@@ -83,9 +85,9 @@ The next thing to do is to adjust your Z Offset. In Matter Control I have a `M56
 ```
 M565 Z-0.9; Z-AXIS OFFSET
 ```
-This line is before the `G29` code. In my original setup with a plain bed I had `-0.9` as my offset. Since the bed is almost 2mm I adjusted that to `1.1` (`2-0.9 = 1.1`). The final line I used was:
+This line is before the `G29` code. In my original setup with a plain bed I had `-0.9` as my offset. Since the bed is almost 2mm I adjusted that to `1.1` (`2-0.9 = 1.1`). After a test 1.1 is encrunshing a bit much so I played a bit and end up with this line:
 ```
-M565 Z1.1; Z-AXIS OFFSET
+M565 Z1.2; Z-AXIS OFFSET
 ```
 
 # STL Files for R1+ Parts #
