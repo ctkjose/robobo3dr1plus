@@ -62,7 +62,31 @@ Good video on installing [Marling 1.1.9](https://www.youtube.com/watch?v=fSx7s1q
 
 # Tutorial and Mods #
 
+## LCD ##
 [Smart LCD Controller Robo](https://www.youtube.com/watch?v=8yWX7Pn-Sg0)
+
+## Magnetic removable build surfaces ##
+
+I got me a cheap removable magnetic build surfaces from amazon for $10, mine is a 220mm x 220mm. The 220 x 220 matches the outlined white square in the R1+ print bed. The quality of mine is ok, but I have yet to see how long it will last. I see some scaring already, but anyhow this is how I got it to work.
+
+To use this we have to limit the bounds of the rectangle used in auto bed leveling. I modified my "Configuration.h" to have the following bounds: 
+```
+    // set the rectangle in which to probe
+    #define LEFT_PROBE_BED_POSITION 15
+    #define RIGHT_PROBE_BED_POSITION 190
+    #define BACK_PROBE_BED_POSITION 190
+    #define FRONT_PROBE_BED_POSITION 15
+```
+I saved and uploaded my firmware.
+
+The next thing to do is to adjust your Z Offset. In Matter Control I have a `M565` code in my start gcode:
+```
+M565 Z-0.9; Z-AXIS OFFSET
+```
+This line is before the `G29` code. In my original setup with a plain bed I had `-0.9` as my offset. Since the bed is almost 2mm I adjusted that to `1.1` (`2-0.9 = 1.1`). The final line I used was:
+```
+M565 Z1.1; Z-AXIS OFFSET
+```
 
 # STL Files for R1+ Parts #
 
