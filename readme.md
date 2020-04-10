@@ -57,10 +57,14 @@ The R1+ uses a common 3D Printer Switching Power Supply 12V 30A (360W, 15A, 120V
 This is the last frimware published by Robo3D for the R1 Plus. It was fixed to compile in newer versions of the Arduino IDE.<br>
 [Marlin 1.0](ROBO3DR1PLUSV2_9APR2020.zip)<br>
 
-I have a project for a Marlin/RepRap like firmware which is especific for 3D printers built on RAMPS like the R1+. This version is much smaller easier to configure, supports a more modern G-CODE and allows for easier extensions by means of hooks.<br>
+
+This is a vanilla Marlin 1.1.9 Frimware for the R1+<br>
+[Marlin 1.1.9](ROBO3DR1PLUSV1.1.9.zip)<br>
+Good video on installing [Marling 1.1.9](https://www.youtube.com/watch?v=fSx7s1q_G-c&t=79s).<br>
+
+I have a project for a Marlin/RepRap like firmware which is especific for 3D printers built on RAMPS and Arduino like the R1+. This version is much smaller easier to configure, supports a more modern G-CODE and allows for easier extensions by means of hooks.<br>
 [SRAM Frimware](https://github.com/ctkjose/R1PLUSFIRMWARE)<br>
 
-Good video on installing [Marling 1.1.9](https://www.youtube.com/watch?v=fSx7s1q_G-c&t=79s).
 
 # Tutorial and Mods #
 
