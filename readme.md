@@ -67,7 +67,7 @@ This is a vanilla Marlin 1.1.9 Frimware for the R1+. Thanks to [Marquis Johnson]
 Good video on on this [firmware](https://www.youtube.com/watch?v=fSx7s1q_G-c&t=79s).<br>
 
 I have a project for a Marlin/RepRap like firmware which is especific for 3D printers built on RAMPS and Arduino like the R1+. This version is much smaller easier to configure, supports a more modern G-CODE and allows for easier extensions by means of hooks.<br>
-[SRAM Frimware](https://github.com/ctkjose/R1PLUSFIRMWARE)<br>
+[SRAMP Frimware](https://github.com/ctkjose/R1PLUSFIRMWARE)<br>
 
 
 # Tutorial and Mods #
