@@ -70,10 +70,16 @@ I have a project for a Marlin/RepRap like firmware which is especific for 3D pri
 [SRAMP Frimware](https://github.com/ctkjose/R1PLUSFIRMWARE)<br>
 
 
+Robo3D [Github Repo](https://github.com/Robo3D/R1PlusMarlin) for R1.
+
 # Tutorial and Mods #
 
 ## LCD ##
 [Smart LCD Controller Robo](https://www.youtube.com/watch?v=8yWX7Pn-Sg0)
+
+## Heating bed ##
+
+Ramsey Gill's [100W Heating bed](https://hackaday.io/project/161487-upgrade-robo3d-r1-heated-bed-100w)
 
 ## Magnetic removable build surfaces ##
 
