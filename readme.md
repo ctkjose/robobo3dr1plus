@@ -82,6 +82,34 @@ Robo3D [Github Repo](https://github.com/Robo3D/R1PlusMarlin) for R1.
 
 # Tutorial and Mods #
 
+## Printing from SD Card, Option 1 ##
+
+Export your print to a gocode file.
+
+Insert the SD card in your computer.
+
+Copy the gcode file to the root of the sd card using the following name "auto0.g".
+
+Turn off your R1 printer.
+
+Insert the sd card in your printer.
+
+Turn on your printer. Wait the print will start automatically.
+
+## Printing from SD Card, Option 2 ##
+
+Newer versions of Matter Control no longer have SD Card support. If you export your gcode to an sdcard you can print the file from MatterControl.
+
+Insert the SD Card, from MatterControl connect to your printer if you havent already.
+
+In the Terminal tab enter the following commands:
+```
+M21; init SD Card
+M32: P !myfile.gco; 
+```
+The print should start shortly. You may disconnect from the printer now.
+
+
 ## LCD ##
 [Smart LCD Controller Robo](https://www.youtube.com/watch?v=8yWX7Pn-Sg0)
 
