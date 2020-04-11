@@ -11,6 +11,8 @@ R1+ uses Nema17 Stepper Motor.
 
 810 GT2 belts. 
 
+The two tension screws with springs on the extruder are standard M4 screws 50mm in length.
+
 ## Arduino Board ##
 
 The R1 uses a standard Arduino MEGA 2560 board.
@@ -23,9 +25,12 @@ The R1+ board is based on a [RAMPS 1.4.3](https://reprap.org/wiki/RAMPS_1.4) des
 
 This board has a different placement and labeling of some connectors and it may confuse people:
 
-On R1+ 1.4.3 board the fan connects to D10, which is a connector labeled "FAN0". This connector is actually connected to Arduino's PIN 9 like regular RAMPS.
+On R1+ board the fan connects to a connector labeled "FAN0". This connector is actually connected to Arduino's PIN 9 like regular RAMPS and it corresponds to the D9 connector on a RAMPS board.
 
-On R1+ 1.4.3 board the extruder heater is connected to the plug labeled D9. This connector behaves like the original D10 of RAMPS and still responds to Arduino's PIN 10.
+On R1+ board the extruder heater is connected to the plug labeled D9. This connector corresponds to the original D10 of RAMPS board and still responds to Arduino's PIN 10.
+
+Here is a good [post](http://community.robo3d.com/index.php?threads/taking-the-r1-ramps-and-rewiring-to-make-generic-ramps-work.8356/) on the Robo's Forums about using a generic RAMPS board on a R1.
+
 
 ## Hot End ##
 
@@ -64,6 +69,9 @@ This is the last frimware published by Robo3D for the R1 Plus. It was fixed to c
 
 This is a vanilla Marlin 1.1.9 Frimware for the R1+. Thanks to [Marquis Johnson](https://www.youtube.com/channel/UCBGNc_mOP_amZNrNj6lAwHg) for providing this firmware, he also posted an excellent [video](https://www.youtube.com/watch?v=lgyjH1bbp1Q&t=212s).<br>
 [Marlin 1.1.9](ROBO3DR1PLUSV1.1.9.zip)<br>
+
+
+Marlin 1.1.9 Firware [discussion](http://community.robo3d.com/index.php?threads/marlin-1-1-9-release-for-robo-r1.22329/) at Robo's forums.
 
 
 I have a project for a Marlin/RepRap like firmware which is especific for 3D printers built on RAMPS and Arduino like the R1+. This version is much smaller easier to configure, supports a more modern G-CODE and allows for easier extensions by means of hooks.<br>
