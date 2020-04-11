@@ -62,9 +62,9 @@ This is the last frimware published by Robo3D for the R1 Plus. It was fixed to c
 [Marlin 1.0](ROBO3DR1PLUSV2_9APR2020.zip)<br>
 
 
-This is a vanilla Marlin 1.1.9 Frimware for the R1+. Thanks to [Marquis Johnson](https://www.youtube.com/channel/UCBGNc_mOP_amZNrNj6lAwHg) for providing this firmware.<br>
+This is a vanilla Marlin 1.1.9 Frimware for the R1+. Thanks to [Marquis Johnson](https://www.youtube.com/channel/UCBGNc_mOP_amZNrNj6lAwHg) for providing this firmware, he also posted an excellent [video](https://www.youtube.com/watch?v=lgyjH1bbp1Q&t=212s).<br>
 [Marlin 1.1.9](ROBO3DR1PLUSV1.1.9.zip)<br>
-Good video on on this [firmware](https://www.youtube.com/watch?v=fSx7s1q_G-c&t=79s).<br>
+
 
 I have a project for a Marlin/RepRap like firmware which is especific for 3D printers built on RAMPS and Arduino like the R1+. This version is much smaller easier to configure, supports a more modern G-CODE and allows for easier extensions by means of hooks.<br>
 [SRAMP Frimware](https://github.com/ctkjose/R1PLUSFIRMWARE)<br>
