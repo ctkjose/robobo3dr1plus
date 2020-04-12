@@ -13,6 +13,8 @@ R1+ uses Nema17 Stepper Motor.
 
 The two tension screws with springs on the extruder are standard M4 screws 50mm in length.
 
+Y Bed: Bearings LM8UU, belt 810 GT2.
+
 ## Arduino Board ##
 
 The R1 uses a standard Arduino MEGA 2560 board.
@@ -22,6 +24,8 @@ The R1+ may come with a RAMPS 1.3 or RAMPS 1.4 board. These two boards are almos
 
 The R1+ board is based on a [RAMPS 1.4.3](https://reprap.org/wiki/RAMPS_1.4) design.
 ![RAMPS WIRING](R1WIRINGDIAG.png)
+
+Board uses Pololu A4988 drivers.
 
 This board has a different placement and labeling of some connectors and it may confuse people:
 
