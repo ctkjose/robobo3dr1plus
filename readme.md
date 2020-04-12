@@ -5,15 +5,27 @@ This is a collection of resources for [Robo3D R1 Plus]() owners in hope they can
 
 # Specs and Parts #
 
+Check this [post](http://community.robo3d.com/index.php?threads/robo3d-replacements-and-upgrades-thread.6677/) for a good collection of information regarding repairs and parts found across the Rodo's forum.
+
 The R1 is pretty much a traditional RAMPS 1.4 3D printer as such is fairly easy to find parts and hack it.
 
 R1+ uses Nema17 Stepper Motor.
 
 810 GT2 belts. 
 
+**Z-AXIS**:<br>
+On the R1+ the z axis uses TR8-4 lead screws. Thats a trapezoidal acme screw in 8 mm diameter with a 4mm pitch (linear motion per full rotation);
+
+You can upgarde 2 indicates 2 mm linear movement per full rotation
+
+**Y_AXIS(Bed)**<br>
+Bearings LM8UU, belt 810 GT2.
+
+Linear solid rods: 8mm
+
 The two tension screws with springs on the extruder are standard M4 screws 50mm in length.
 
-Y Bed: Bearings LM8UU, belt 810 GT2.
+
 
 ## Arduino Board ##
 
@@ -145,4 +157,9 @@ M565 Z1.2; Z-AXIS OFFSET
 ```
 
 # STL Files for R1+ Parts #
+
+Replacement carriage for mounting a E3D V6. [link](https://www.thingiverse.com/thing:1411833)])<br>
+
+Fan mount for stock hexagon extruder and carriage. [link](https://www.thingiverse.com/thing:1374049)<br>
+
 
