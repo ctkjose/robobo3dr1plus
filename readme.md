@@ -58,7 +58,7 @@ Thermistor is EPCOS 100k ohms, 4.7k pullup. You may use others but must be confi
 Heater Cardrige is a 12v/30w. 
 
 Available at:<br>
-Amazon [ReprapDiscount](https://www.amazon.com/gp/product/B00W8FL5BS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00W8FL5BS&linkCode=as2&tag=ctk08-20&linkId=fb198b65e3dfeb2f29869fbcb71f9788)<br>
+[Amazon](https://www.amazon.com/gp/product/B00W8FL5BS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00W8FL5BS&linkCode=as2&tag=ctk08-20&linkId=fb198b65e3dfeb2f29869fbcb71f9788)<br>
 [reprapdiscount](http://www.reprapdiscount.com/hotends/67-hexagon-hotend-set.html)<br>
 [partsbuilt](https://www.partsbuilt.com/r1-hotend-assembly-robo)<br>
 
@@ -176,7 +176,7 @@ M565 Z1.2; Z-AXIS OFFSET
 
 # STL Files for R1+ Parts #
 
-Replacement carriage for mounting a E3D V6. [link](https://www.thingiverse.com/thing:1411833))<br>
+Replacement carriage for mounting a E3D V6. [link](https://www.thingiverse.com/thing:1411833)<br>
 
 Fan mount for stock hexagon extruder and carriage. [link](https://www.thingiverse.com/thing:1374049)<br>
 
