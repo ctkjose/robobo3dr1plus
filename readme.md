@@ -4,13 +4,13 @@ This is a collection of resources for [Robo3D R1 Plus]() owners in hope they can
 
 # Communities and Support #
 
-Thingiverse Robo3d [Forum](https://www.thingiverse.com/groups/robo-3d)<br>
+Thingiverse Robo3D [Forum](https://www.thingiverse.com/groups/robo-3d)<br>
 
-Robo3d [Forum](http://community.robo3d.com/index.php)<br>
+Robo3D Community [Forum](http://community.robo3d.com/index.php)<br>
 
 # Specs and Parts #
 
-Check this [post](http://community.robo3d.com/index.php?threads/robo3d-replacements-and-upgrades-thread.6677/) for a good collection of information regarding repairs and parts found across the Rodo's forum.
+Check this [post](http://community.robo3d.com/index.php?threads/robo3d-replacements-and-upgrades-thread.6677/) for a good collection of information regarding repairs and parts found across the Robo's forum.
 
 The R1 is pretty much a traditional RAMPS 1.4 3D printer as such is fairly easy to find parts and hack it.
 
@@ -127,6 +127,21 @@ I have a project for a Marlin/RepRap like firmware which is especific for 3D pri
 
 Robo3D [Github Repo](https://github.com/Robo3D/R1PlusMarlin) for R1.
 
+# Software #
+
+## MatterControl ##
+
+
+
+## Cura R1 Profile ##
+
+Zip [file](CURA_CFG01.zip) with config.<br>
+Drop the robo3dr1_platform.stl into meshes folder and robo3dr1.json into machines folder
+
+
+[Forum Discussion](http://community.robo3d.com/index.php?threads/cura-2-r1-setup.17126/)
+
+
 # Tutorial and Mods #
 
 ## Printing from SD Card, Option 1 ##
@@ -186,6 +201,9 @@ This line is before the `G29` code. In my original setup with a plain bed I had 
 ```
 M565 Z1.2; Z-AXIS OFFSET
 ```
+
+
+
 
 # STL Files for R1+ Parts #
 
