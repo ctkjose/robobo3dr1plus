@@ -55,7 +55,10 @@ The nozzle is a 0.4mm for 1.75mm filament, a M6 thread, 1mm thread pitch.
 Thermistor is EPCOS 100k ohms, 4.7k pullup. You may use others but must be configured on the firmware.
 Heater Cardrige is a 12v/30w. 
 
-Available at: [reprapdiscount](http://www.reprapdiscount.com/hotends/67-hexagon-hotend-set.html) and [partsbuilt](https://www.partsbuilt.com/r1-hotend-assembly-robo).
+Available at:<br>
+Amazon [ReprapDiscount](https://www.amazon.com/gp/product/B00W8FL5BS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00W8FL5BS&linkCode=as2&tag=ctk08-20&linkId=fb198b65e3dfeb2f29869fbcb71f9788)<br>
+[reprapdiscount](http://www.reprapdiscount.com/hotends/67-hexagon-hotend-set.html)<br>
+[partsbuilt](https://www.partsbuilt.com/r1-hotend-assembly-robo)<br>
 
 Nozzles compatible with E3D V6 should also work with the stock hexagon hotend as long as its for 1.75mm filament.
 
@@ -65,8 +68,10 @@ The nozzle to bed distance is 0.9mm.
 
 The stock hot end fan specs are:
 
-12v Brushless Dc Mini Cooling Fan
-Dimensions: 25mm X 25mm X 10mm.
+12v Brushless Dc Mini Cooling Fan<br>
+Dimensions: 25mm X 25mm X 10mm.<br>
+
+Amazon [Option1](https://www.amazon.com/gp/product/B00MYNWUP4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00MYNWUP4&linkCode=as2&tag=ctk08-20&linkId=7be85f2de951dd2294e4c2b29786ce71)<br>
 
 
 ## Other Hotends ##
@@ -84,6 +89,9 @@ A general accepted opinion is that PTFE lined throaths limits your tempetures (b
 # Power Supply #
 
 The R1+ uses a common 3D Printer Switching Power Supply 12V 30A (360W, 15A, 120V-AC), ease to find only if you serach for S-360-12.
+
+Amazon [Option1](https://amzn.to/2XIWFLl)<br>
+
 
 # Firmware #
 
