@@ -61,6 +61,14 @@ Nozzles compatible with E3D V6 should also work with the stock hexagon hotend as
 
 The nozzle to bed distance is 0.9mm.
 
+### Fan ###
+
+The stock hot end fan specs are:
+
+12v Brushless Dc Mini Cooling Fan
+Dimensions: 25mm X 25mm X 10mm.
+
+
 ## Other Hotends ##
 
 The [filament throats](https://reprap.org/forum/read.php?14,846189,846189) may be full metal or PTFE (teflon) lined.
@@ -158,7 +166,7 @@ M565 Z1.2; Z-AXIS OFFSET
 
 # STL Files for R1+ Parts #
 
-Replacement carriage for mounting a E3D V6. [link](https://www.thingiverse.com/thing:1411833)])<br>
+Replacement carriage for mounting a E3D V6. [link](https://www.thingiverse.com/thing:1411833))<br>
 
 Fan mount for stock hexagon extruder and carriage. [link](https://www.thingiverse.com/thing:1374049)<br>
 
