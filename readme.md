@@ -9,8 +9,10 @@ The R1 is pretty much a traditional RAMPS 1.4 3D printer as such is fairly easy 
 **Motors**:<br>
 R1+ uses Nema17 Bipolar Stepper Motor (1.8° (200 steps), 5mm shaft).
 
+20 Teeth Timing Pulley. [Amazon Kit](https://amzn.to/3esJ3JX)
+
 **Belts**:<br>
-810 GT2 belts. 
+810 GT2 belts. [Amazon Kit](https://amzn.to/3esJ3JX)
 
 **Z-AXIS**:<br>
 On the R1+ the z axis uses TR8-4 lead screws. Thats a trapezoidal acme screw in 8 mm diameter with a 4mm pitch (linear motion per full rotation).
