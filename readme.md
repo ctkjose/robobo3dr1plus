@@ -7,7 +7,13 @@ This is a collection of resources for [Robo3D R1 Plus]() owners in hope they can
 The R1 is pretty much a traditional RAMPS 1.4 3D printer as such is fairly easy to find parts and hack it.
 
 **Motors**:<br>
-R1+ uses Nema17 Bipolar Stepper Motor (1.8° (200 steps), 5mm shaft).
+R1+ uses Nema17 Bipolar Stepper Motor (1.8° (200 steps), 5mm shaft). 
+
+Nema17 is the standard that states the dimensions, meanig that a Nema17 motro will fit your Robo in terms of opennings and screw holes. The other things to consider are torque and power.
+
+Since a Robo use a RAMPS 1.4 max power is dicated by your motor's drivers (eg: Polulo A4988). In general it will be about 1.5A will some may push to 2A. It all depends on the quiality of the driver, heatsink and cooling. For an R1+ a power around 1.5 amps is more than enough.
+
+The torque is around 45Ncm (64oz.in).
 
 20 Teeth Timing Pulley. [Amazon Kit](https://amzn.to/3esJ3JX)
 
