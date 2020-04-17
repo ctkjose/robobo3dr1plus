@@ -131,8 +131,8 @@ Robo3D [Github Repo](https://github.com/Robo3D/R1PlusMarlin) for R1.
 Zip [file](CURA_CFG01.zip) with config.<br>
 Drop the robo3dr1_platform.stl into meshes folder and robo3dr1.json into machines folder
 
-
-[Forum Discussion](http://community.robo3d.com/index.php?threads/cura-2-r1-setup.17126/)
+[Forum Discussion](http://community.robo3d.com/index.php?threads/cura-setup.23834/)
+[Forum Discussion Older](http://community.robo3d.com/index.php?threads/cura-2-r1-setup.17126/)
 
 
 
