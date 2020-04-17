@@ -2,6 +2,11 @@
 
 This is a collection of resources for [Robo3D R1 Plus]() owners in hope they can keep their printers supported and shugging on!
 
+# Communities and Support #
+
+Thingiverse Robo3d [Forum](https://www.thingiverse.com/groups/robo-3d)<br>
+
+Robo3d [Forum](http://community.robo3d.com/index.php)<br>
 
 # Specs and Parts #
 
