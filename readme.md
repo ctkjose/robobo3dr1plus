@@ -88,6 +88,14 @@ A general accepted opinion is that PTFE lined throaths limits your tempetures (b
 [Novice Expert Assemble Youtube Video](https://www.youtube.com/watch?v=0FB3MmgvWrw)<br>
 [Novice Expert Installation Youtube Video](https://www.youtube.com/watch?v=sZM6MIuPorQ)<br>
 
+### E3D V6 Titan ###
+
+Print [these](https://www.thingiverse.com/thing:1557214) parts first.
+
+Options to buy:
+[Amazon clone full assembly with motor](https://amzn.to/2VGxYg1)
+
+
 # Power Supply #
 
 The R1+ uses a common 3D Printer Switching Power Supply 12V 30A (360W, 15A, 120V-AC), ease to find only if you serach for S-360-12.
