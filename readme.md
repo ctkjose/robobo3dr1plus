@@ -2,26 +2,18 @@
 
 This is a collection of resources for [Robo3D R1 Plus]() owners in hope they can keep their printers supported and shugging on!
 
-# Communities and Support #
-
-Thingiverse Robo3D [Forum](https://www.thingiverse.com/groups/robo-3d)<br>
-
-Robo3D Community [Forum](http://community.robo3d.com/index.php)<br>
-
 # Specs and Parts #
-
-Check this [post](http://community.robo3d.com/index.php?threads/robo3d-replacements-and-upgrades-thread.6677/) for a good collection of information regarding repairs and parts found across the Robo's forum.
 
 The R1 is pretty much a traditional RAMPS 1.4 3D printer as such is fairly easy to find parts and hack it.
 
+**Motors**:<br>
 R1+ uses Nema17 Stepper Motor.
 
+**Belts**:<br>
 810 GT2 belts. 
 
 **Z-AXIS**:<br>
-On the R1+ the z axis uses TR8-4 lead screws. Thats a trapezoidal acme screw in 8 mm diameter with a 4mm pitch (linear motion per full rotation);
-
-You can upgarde 2 indicates 2 mm linear movement per full rotation
+On the R1+ the z axis uses TR8-4 lead screws. Thats a trapezoidal acme screw in 8 mm diameter with a 4mm pitch (linear motion per full rotation).
 
 **Y_AXIS(Bed)**<br>
 Bearings LM8UU, belt 810 GT2.
@@ -30,11 +22,9 @@ Linear solid rods: 8mm
 
 The two tension screws with springs on the extruder are standard M4 screws 50mm in length.
 
-
-
 ## Arduino Board ##
 
-The R1 uses a standard Arduino MEGA 2560 board.
+The R1 uses a standard [Arduino MEGA 2560](https://amzn.to/3ewtlO4) board.
 
 ## RAMPS Board ##
 The R1+ may come with a RAMPS 1.3 or RAMPS 1.4 board. These two boards are almost the same.
@@ -42,7 +32,7 @@ The R1+ may come with a RAMPS 1.3 or RAMPS 1.4 board. These two boards are almos
 The R1+ board is based on a [RAMPS 1.4.3](https://reprap.org/wiki/RAMPS_1.4) design.
 ![RAMPS WIRING](R1WIRINGDIAG.png)
 
-Board uses Pololu A4988 drivers.
+Board uses [Pololu A4988](https://amzn.to/3aoiO4p) drivers.
 
 This board has a different placement and labeling of some connectors and it may confuse people:
 
@@ -60,23 +50,26 @@ The R1+ comes with a "hexagon hotend".
 The nozzle is a 0.4mm for 1.75mm filament, a M6 thread, 1mm thread pitch. I got this replacement [set](https://amzn.to/3cshheR) in amazon.
 
 Thermistor is EPCOS 100k ohms, 4.7k pullup. You may use others but must be configured on the firmware.
+
 Heater Cardrige is a 12v/30w. 
+
+Nozzles compatible with E3D V6 should also work with the stock hexagon hotend as long as its for 1.75mm filament.
+
+The nozzle to bed distance is 0.9mm.
 
 Available at:<br>
 [Amazon](https://www.amazon.com/gp/product/B00W8FL5BS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00W8FL5BS&linkCode=as2&tag=ctk08-20&linkId=fb198b65e3dfeb2f29869fbcb71f9788)<br>
 [reprapdiscount](http://www.reprapdiscount.com/hotends/67-hexagon-hotend-set.html)<br>
 [partsbuilt](https://www.partsbuilt.com/r1-hotend-assembly-robo)<br>
 
-Nozzles compatible with E3D V6 should also work with the stock hexagon hotend as long as its for 1.75mm filament.
-
-The nozzle to bed distance is 0.9mm.
 
 ### Fan ###
 
-The stock hot end fan specs are:
-
+The stock hot end fan specs are:<br>
 12v Brushless Dc Mini Cooling Fan<br>
 Dimensions: 25mm X 25mm X 10mm.<br>
+
+The original fan has short cables that stress or get damage by heat. When the hotend fan is not working properly, heat can creap up the extruder throat melting the filament before it reaches the heating block causeing poor extrusion and clogs. 
 
 Amazon [Option1](https://www.amazon.com/gp/product/B00MYNWUP4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00MYNWUP4&linkCode=as2&tag=ctk08-20&linkId=7be85f2de951dd2294e4c2b29786ce71)<br>
 
@@ -95,7 +88,7 @@ A general accepted opinion is that PTFE lined throaths limits your tempetures (b
 
 ### E3D V6 Titan ###
 
-Print [these](https://www.thingiverse.com/thing:1557214) parts first.
+Carriage assembly [stl](https://www.thingiverse.com/thing:1557214) in Thingiverse.
 
 Options to buy:
 [Amazon clone full assembly with motor](https://amzn.to/2VGxYg1)
@@ -140,6 +133,7 @@ Drop the robo3dr1_platform.stl into meshes folder and robo3dr1.json into machine
 
 
 [Forum Discussion](http://community.robo3d.com/index.php?threads/cura-2-r1-setup.17126/)
+
 
 
 # Tutorial and Mods #
@@ -207,8 +201,19 @@ M565 Z1.2; Z-AXIS OFFSET
 
 # STL Files for R1+ Parts #
 
+My personal [collection](https://www.thingiverse.com/jcuevas/collections/robo3dr1) of STL files related to the Robo3D R1 in [Thingiverse](https://www.thingiverse.com/jcuevas/collections/robo3dr1).
+
 Replacement carriage for mounting a E3D V6. [link](https://www.thingiverse.com/thing:1411833)<br>
 
 Fan mount for stock hexagon extruder and carriage. [link](https://www.thingiverse.com/thing:1374049)<br>
 
+
+# Other links #
+
+
+Thingiverse Robo3D [Forum](https://www.thingiverse.com/groups/robo-3d)<br>
+
+Robo3D's Community [Forum](http://community.robo3d.com/index.php)<br>
+
+Check this [post](http://community.robo3d.com/index.php?threads/robo3d-replacements-and-upgrades-thread.6677/) for a good collection of information regarding repairs and parts found across the Robo's forum.
 
