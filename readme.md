@@ -65,7 +65,7 @@ Available at:<br>
 
 ### Fan ###
 
-The stock hot end fan specs are:<br>
+The stock hotend fan specs are:<br>
 12v Brushless Dc Mini Cooling Fan<br>
 Dimensions: 25mm X 25mm X 10mm.<br>
 
