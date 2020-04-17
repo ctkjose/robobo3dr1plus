@@ -51,7 +51,9 @@ Here is a good [post](http://community.robo3d.com/index.php?threads/taking-the-r
 ## Hot End ##
 
 The R1+ comes with a "hexagon hotend".
-The nozzle is a 0.4mm for 1.75mm filament, a M6 thread, 1mm thread pitch.
+
+The nozzle is a 0.4mm for 1.75mm filament, a M6 thread, 1mm thread pitch. I got this replacement [set](https://amzn.to/3cshheR) in amazon.
+
 Thermistor is EPCOS 100k ohms, 4.7k pullup. You may use others but must be configured on the firmware.
 Heater Cardrige is a 12v/30w. 
 
