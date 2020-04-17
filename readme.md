@@ -210,10 +210,11 @@ Fan mount for stock hexagon extruder and carriage. [link](https://www.thingivers
 
 # Other links #
 
-
 Thingiverse Robo3D [Forum](https://www.thingiverse.com/groups/robo-3d)<br>
 
 Robo3D's Community [Forum](http://community.robo3d.com/index.php)<br>
+
+This is a great FAQ [post](http://community.robo3d.com/index.php?threads/faq-r1-r1-series-printers.19735/) at Robo3D's forum for R1 owners. 
 
 Check this [post](http://community.robo3d.com/index.php?threads/robo3d-replacements-and-upgrades-thread.6677/) for a good collection of information regarding repairs and parts found across the Robo's forum.
 
