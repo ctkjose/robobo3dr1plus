@@ -11,7 +11,9 @@ R1+ uses Nema17 Bipolar Stepper Motor (1.8° (200 steps), 5mm shaft).
 
 Nema17 is the standard that states the dimensions, meanig that a Nema17 motro will fit your Robo in terms of opennings and screw holes. The other things to consider are torque and power.
 
-Since a Robo use a RAMPS 1.4 max power is dicated by your motor's drivers (eg: Polulo A4988). In general it will be about 1.5A will some may push to 2A. It all depends on the quiality of the driver, heatsink and cooling. For an R1+ a power around 1.5 amps is more than enough.
+Since a Robo use a RAMPS 1.4 max power is dicated by your motor's drivers (eg: A4988). In general it will be around 1.5A to 2A. It all depends on the quiality of the driver, heatsink and cooling. For an R1+ a power around 1.5 amps is more than enough.
+
+(As a side note remember that the board can only handle so much current used by all its components, the overall total power rating of a RAMPS 1.4 board is around 5A, it will vary by board quality and PCB traces used, but a good reference value.)
 
 The torque is around 45Ncm (64oz.in).
 
@@ -23,12 +25,18 @@ The torque is around 45Ncm (64oz.in).
 **Z-AXIS**:<br>
 On the R1+ the z axis uses TR8-4 lead screws. Thats a trapezoidal acme screw in 8 mm diameter with a 4mm pitch (linear motion per full rotation).
 
-**Y_AXIS(Bed)**<br>
-Bearings LM8UU, belt 810 GT2.
-
-Linear solid rods: 8mm
-
 The two tension screws with springs on the extruder are standard M4 screws 50mm in length.
+
+**Y-AXIS(Bed)**<br>
+Bearings LM8UU
+
+810 GT2 belts (GT2 Steps, 6mm wide, 2mm pitch)
+
+20 Teeth Timing Pulley,  (I havent taken mine apart to see if its a 6mm or 8mm, it does look larger.)
+
+
+** X-AXIS **<br>
+
 
 ## Arduino Board ##
 
