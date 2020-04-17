@@ -7,7 +7,7 @@ This is a collection of resources for [Robo3D R1 Plus]() owners in hope they can
 The R1 is pretty much a traditional RAMPS 1.4 3D printer as such is fairly easy to find parts and hack it.
 
 **Motors**:<br>
-R1+ uses Nema17 Stepper Motor.
+R1+ uses Nema17 Bipolar Stepper Motor (1.8° (200 steps), 5mm shaft).
 
 **Belts**:<br>
 810 GT2 belts. 
