@@ -143,7 +143,13 @@ Robo3D [Github Repo](https://github.com/Robo3D/R1PlusMarlin) for R1.
 
 ## MatterControl ##
 
+MatterControl avaliable from [MatterHacker](https://www.matterhackers.com) was the original software bundled with Robo. The latest version is 2.0 (as of 27/JUNE/2020). MatterControl is more easier to use than Cura and making print profiles with different settings for your prints is super easy.
 
+The slicer is MatterSlicer which is a branch from the original CuraEngine, it is written in C++ for performance and the github project is quite active. I havent had any issues using their slicer, actually I have got better results with MatterSlicer than Cura. 
+
+For advance editing and preping you can look a [MeshMixer](http://www.meshmixer.com/download.html) as a companion. Is great for [things](https://formlabs.com/blog/meshmixer-tutorial-tips-to-edit-stl-files-for-3d-printing/) like hollowing, fine control of support points and mesh repairs.
+
+MatterControl comes with a printer profile for the Robo R1+.
 
 ## Cura R1 Profile ##
 
