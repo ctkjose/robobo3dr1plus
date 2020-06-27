@@ -118,7 +118,7 @@ Options to buy:
 
 # Power Supply #
 
-The R1+ uses a common 3D Printer Switching Power Supply 12V 30A (360W, 15A, 120V-AC), ease to find only if you serach for S-360-12.
+The R1+ uses a common 3D Printer Switching Power Supply 12V 30A (360W, 15A, 120V-AC), ease to find if you search for S-360-12.
 
 Amazon [Option1](https://amzn.to/2XIWFLl)<br>
 
@@ -141,6 +141,7 @@ I have a project for a Marlin/RepRap like firmware which is especific for 3D pri
 
 
 Robo3D [Github Repo](https://github.com/Robo3D/R1PlusMarlin) for R1.
+
 
 # Software #
 
