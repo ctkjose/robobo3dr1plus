@@ -37,7 +37,16 @@ Bearings LM8UU
 20 Teeth Timing Pulley (5mm ID shaft),  (I presume that it is 6mm wide pulley since the belt is 6mm but I havent check.)
 
 
-** X-AXIS **<br>
+**X-AXIS**<br>
+
+The X-Axis carriage is horizontal version of the Pruisa i3 style carriage.
+
+The X-Axis carriage rides in two 8mm linear rods. 
+
+4ea LM8UU bearings (24mm length, 15mm outside diameter, 8mm inside diameter) support the carriage on the 8mm linear rods.
+
+The width of the carriage as a line form the center point of each bearing opening is 83mm.
+
 
 
 ## Arduino Board ##
