@@ -29,21 +29,30 @@ NEMA 17 defines a face plate of 43.18 x 43.18 mm. Its the size of motor commonly
 
 > **Important** This section is mainly for 4 wire stepper motors.
 
-Lets start with cable colors on a stepper motor are NOT an standard and while you may find connectors with the "black-green-red-blue" colors, DO not use the colors and their order to assume all motors are wired the same.
 
-The following picture is an example of the pin out of a NEMA 17 motor:<br>
 
-![Example of a PIN layout and motor phases](motor_wiring.png)
+In a 4 wire motor that is not pre-wired you usually have a (JST-XH) six pin connector in the motor. The cable will have a 4 pin connector on the other end that matches the connector on the control board. From the six pins only four are used on the connector.
 
-Motor have two coils (2 phases motors), each coil has two pairs of cables. Like shown on the above picture the trick is to identify or to find out what pin in the motor corresponds to a pair. 
+![Motor PIN layout](motor_connector.png)
 
-When looking for a motor documentation online you may find the pins listed as "Coil 1", "Coil 2", "Coil 3" and "Coil 4", in this case "Coil 1" and "Coil 2" is a pair and "Coil 3" and Coil 4" is the second pair.
+As shown on the picture above you will see the two common connections I have found in motors I buy or have in my CNC/3D printer. A basic stepper motor has two coils each running as a phase, thats what they are called a two phase motor. The important thing of wiring motor is to get the pin combination for each coil and wire each coil to your motor driver or control board.
+
+
+Since the motor has two coils (2 phases motors), each coil has two pairs of cables. Like shown on the above picture the trick is to identify or to find out what pin in the motor corresponds to a pair. At least I have found only those two combinations but there are more.
+
+Which pair connects to which coil does not matter as long as you have the two cables of one pair going to one coil. A common error is to have one cable from one pair going to the other coil and vice-versa.
+
+> Word of caution! The cable colors on a stepper motor are NOT a standard DO NOT asume a color combination or order, specially when buying a replacement motor on the internet. I do find that a lot of cables do use black-green for one pair and red-blue for the other.
+
+When looking for a motor documentation online you may find the pins listed as "A", "B", "C", "D" or "Coil 1", "Coil 2", "Coil 3" and "Coil 4", in this case "A" and "B" is a pair and "C" and "D" is a pair, or "Coil 1" and "Coil 2" is a pair and "Coil 3" and Coil 4" is the second pair.
+
+In documentation you will see **1A**, **1B** and **2A**, **2B** when referencing the pins of each coil (or similar using A and B). You will mainly see this in documentation for Pololu drivers use in CNC/GRBL and 3D printing control boards.
 
 If you dont have the pint out of the coils the main sign of a motor thats wired incorrectly is that it will vibrate and will not turn. This is because both phases are spinning in the opposite direction locking the spin.
 
-Usually the pins in the motor are in order with the two pairs of coils. Meaning that **Pin 1** and **Pin 2** is one coil and **Pin 2** and **Pin 3** is the second coil.
+Usually the pins in the motor are in order with the two pairs of coils. Meaning that **Pin 1** and **Pin 2** is one coil and **Pin 2** and **Pin 3** is the second coil. Another common combination is to have "Coil 1" followed by "Coil 3" then "Coil 2" and "Coil 4"
 
-> **Hint** If you are swapping a motor in an printer or equipment already wired and if the new motor came with a cable both ends to see which are the pairs you will see if a cable is crossed or changed order in one end, usually you have to do the same order swap in the motor end of your exiting motor connector.  
+> **Hint** If you are swapping a motor in an printer or equipment already wired and if the new motor came with a cable, then check both ends to see which are the pairs you will see if a cable is crossed or changed order in one end, usually you have to do the same order swap in the motor end of your exiting motor connector.  Using the tip of a tweezer or needle you can get the pins out or your connector and swap the order.
 
 One way to test is you have a coil wired is to start testing two pins at a time in order. If you have a pair the motor will lock. Once you have the two pairs if your motor runs backward just revert the order of wires.
 
