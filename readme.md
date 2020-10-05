@@ -19,7 +19,7 @@ Since a Robo use a RAMPS 1.4, max power is dictated by your motor's drivers (eg:
 
 The torque is around 45Ncm (64oz.in).
 
-The motors wiring in the Robo R1 Plus has a straight connector (see my [motor](motor.md) page for more details).
+The motors wiring in the Robo R1 Plus has a straight connector (see my [motor](motors.md) page for more details).
 
 20 Teeth Timing Pulley (5mm ID shaft). [Amazon Kit](https://amzn.to/3esJ3JX)
 
