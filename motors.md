@@ -6,11 +6,11 @@ The mounting size/specification for example NEMA-17, NEMA-23, etc.
 
 The current draw per phase. Your stepper motor drivers or board dictates the limit of current it can provide to the motor (for example a common Driver like a A4988 (Pololu) provides from 1A to 1.2A).
 
-The volatage supported, for example for 0 to 4V.
+The volatage supported, for example from 0 to 4V.
 
 The force it can produce. The main metrics for this is the **holding torque** (For example 3.2 kg-cm, You will also find this in Newtons or oz-in). In 3D printing an average of 44 N·cm is quite enough for most designs.
 
-The steps is how accurtly it can move. This is given in degrees per step or steps per revolution. For example in 3D printing an average NEMA17 motor used is 1.8 or 1.9 degrees with 200/400 steps per revolution. If a motor makes a 1.8degree rotation in one step, then to complete one revolution (that is 360 degrees in a circle) it will take 200 steps.
+The steps is how accurtly it can move. This is given in degrees per step or steps per revolution. For example in 3D printing an average NEMA17 motor used is 1.8 or 1.9 degrees with 200/400 steps per revolution. If a motor makes a 1.8 degree rotation in one step, then to complete one revolution (that is 360 degrees in a circle) it will take 200 steps.
 
 To learn more check this [wiki](https://reprap.org/wiki/Stepper_motor) page.
 
@@ -19,8 +19,6 @@ To learn more check this [wiki](https://reprap.org/wiki/Stepper_motor) page.
 NEMA defines the dimensional specifications of a motors mounting face, thats the spacing of screws, the size of the opening and the size of the screews. The depth, width and other shapes and features are at the discretion of the motor manufacturer. So NEMA only guarantees that a particular NEMA motor will mount a specific mount designed for it, while actual clearance to the sides and back will also have to be considered when selecting a motor.
 
 Usually in the maker space and 3DPrinting a NEMA motor is a short hand to refer to a bi-polar stepper motor with microstepping.
-
-The NEMA standard defines alot of things, but pretty much all you can trust with a motor 
 
 ### NEMA 17 ##
 
@@ -37,17 +35,15 @@ In a 4 wire motor that is not pre-wired you usually have a (JST-XH) six pin conn
 
 ![Motor PIN layout](motor_connector.png)
 
-As shown on the picture above you will see the two common connections I have found in motors. A basic stepper motor has two coils each running as a phase, thats why they are a two phase motor. The important thing of wiring a motor is to get the pin combination for each coil and wire each coil to your motor driver or control board. 
+As shown on the picture above you will see the two common connections I have found in motors. A basic stepper motor has two coils each running as a phase, (thats why we know them as two phase motor). The important thing of wiring a motor is to get the pin combination for each coil and wire each coil to your motor driver or control board. 
 
-Since the motor has two coils (2 phases motors), each coil has two pairs of cables. Like shown on the above picture the trick is to identify what pin in the motor corresponds to a pair. At least I have found only those two combinations but there are more.
+Since the motor has two coils (2 phases motors), each coil has two pairs of cables. Like shown on the above picture the trick is to identify what pin in the motor corresponds to a pair. I have found two combinations in the motors I have used, I call them **straight** and **cross**. The straight has the pins for the coil in order and the cross switches the two in the middle.
 
 The other thing with the two cables in a pair is their polarity. The polarity tells the direction of the spin. There is not such thing as wrong direction instead the direction is dictated by how is the motor used and the control board. For this reason in many motor diagrams you will NOT see polarity specified as is left for the implementation of the design to select the default direction. 
 
-> **Note** With most controller boards in 3D Printers and GRBL Shields fliping the connector changes the spin direction. In many 3D printing firmwares (eg Marlin) changing the direction as desired is as simple changing a configuration value. In CNC shields for GRLB you usually find a jumper to change the direction of an axis. If the connector can not be flipped you may just uses a tweezer to loose the pins and flip the order.
+> **Note** With most controller boards in 3D Printers and GRBL Shields fliping the connector changes the spin direction. In many 3D printing firmwares (eg Marlin) changing the direction as desired is as simple as changing a configuration value. In CNC shields for GRLB you usually find a jumper to change the direction of an axis. If the connector can not be flipped (ie is a JST-XH or similar) usually you can use a tweezer or needle to loose the pins from the connector and flip the order, (check for a flap on the plastic that you lift or a bent in the metal pin that you push, else check YouTube).
 
-In many cases the wrong direction is a trivial thing to correct, it can be fix by reversing the conector to the driver, inverting the cables in a pair or using the configuration of the firmware in your controller board. 
-
-> Word of caution! The cable colors on a stepper motor are NOT a standard DO NOT asume a color combination or order, specially when buying a replacement motor on the internet. I do find that a lot of cables do use black-green for one pair and red-blue for the other.
+> Word of caution! The cable colors on a stepper motor are NOT a standard DO NOT asume a color combination or order, specially when buying a replacement motor on the internet. I do find that a lot of cables do follow the notion of black-green for one pair and red-blue for the other.
 
 When looking for a motor documentation online you may find the pins listed as "Coil 1", "Coil 2", "Coil 3" and "Coil 4", in this case "Coil 1" and "Coil 2" is a pair and "Coil 3" and Coil 4" is the second pair. In some instances you will find the letters "A", "B", "C" and "D" which in my experience identify the actual pins in the connector. For example:
 
