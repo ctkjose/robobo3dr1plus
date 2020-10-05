@@ -15,11 +15,14 @@ Nema17 is the standard that states the dimensions, meanig that a Nema17 motor wi
 
 Since a Robo use a RAMPS 1.4, max power is dictated by your motor's drivers (eg: [A4988](https://reprap.org/wiki/A4988)). In general it will be around 1.5A to 2A. It all depends on the quiality of the driver, heatsink and cooling. For an R1+ a power around 1.5 amps is more than enough.
 
-(As a side note remember that the board can only handle so much current used by all its components, the overall total power rating of a RAMPS 1.4 board is around 5A, it will vary by board quality and PCB traces used, but a good reference value.)
+(As a side note remember that the board can only handle so much current used by all its components, the overall total power rating of a RAMPS 1.4 board is around 5A, it will vary by board quality and PCB traces used, but still a good reference value.)
 
 The torque is around 45Ncm (64oz.in).
 
+The motors wiring in the Robo R1 Plus has a straight connector (see my [motor](motor.md) page for more details).
+
 20 Teeth Timing Pulley (5mm ID shaft). [Amazon Kit](https://amzn.to/3esJ3JX)
+
 
 **Belts**:<br>
 810 GT2 belts (GT2 Steps, 6mm wide, 2mm pitch). [Amazon Kit](https://amzn.to/3esJ3JX)
