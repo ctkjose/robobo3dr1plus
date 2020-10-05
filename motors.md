@@ -63,13 +63,11 @@ Which pair connects to which coil does not matter as long as you have the two ca
 
 Using a multimeter in continuity (resistance/diodo test mode) you can test the combinations of pins until you find the pair that belongs to one coil. In continuity test you will have a low resistance value, some multimiters beep or read "short/closed" to indicate when you found a pair. Use the first picture as reference to first check if you have a straight or crossed pin out that are quite common.
 
-> **Hint** If you are swapping a motor in an printer or equipment already wired and if the new motor came with a cable, then check both ends to see which are the pairs you will see if a cable is crossed or changed order in one end, usually you have to do the same order swap in the motor end of your exiting motor connector.  Using the tip of a tweezer or needle you can get the pins out or your connector and swap the order.
+> **Hint** If you are swapping a motor in an printer or equipment already wired, then check both ends to see which are the pairs, use the picture "Corresponding Coil Pins in Motors Drivers and Controller Boards" for reference. If your new motor came with a cable then compare the motor end of the new and old connector to quickly tell if its cross or straight. Usually black/green are in one side and blue/red in the other (dont mind the order of the pairs), if you see one cable from one of these two pairs swap in the middle two pins, chances is that you have a crossed connector for your motor.
 
-One way to test is you have a coil wired is to start testing two pins at a time in order. If you have a pair the motor will lock. Once you have the two pairs if your motor runs backward just revert the order of wires.
+[Here](https://reprap.org/wiki/Stepper_wiring) is an excellent guide on wiring motors and finding the coil pairs.
 
-As a note as long as the pairs are correct which cable goes to each side of the two pins on a pair does not matter, with many 3D printers the connector on the board can be easily be flip to reverse the the polarity if the motor spins in the wrong direction. You may Really can b the only thing that matter are that the two wire for a particular pair connect to one coil in the motor and that you do not have one cable for one pair going to each coil (mix).
-
-[Here](https://reprap.org/wiki/Stepper_wiring) is an excellent guide on wiring motors.
+As mentioned before as long as the pairs for the coil are correct you dont have to worry much about which pair goes to which coil (they both do the same job). As for polarity (step direction) with many 3D printers the connector on the board can be easily be flip to reverse the the polarity if the motor spins in the wrong direction. The only thing that matter is that the two wires for a particular pair connect to one coil in the motor and that you do not have one cable for one pair going to the other coil (mix them).
 
 
 ## RAMPS Boards ##
