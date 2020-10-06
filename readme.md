@@ -64,6 +64,7 @@ The R1 uses a standard [Arduino MEGA 2560](https://amzn.to/3ewtlO4) board.
 
 
 ## RAMPS Board ##
+
 The R1+ may come with a RAMPS 1.3 or RAMPS 1.4 board. These two boards are almost the same.
 
 The R1+ board is based on a [RAMPS 1.4.3](https://reprap.org/wiki/RAMPS_1.4) design.
@@ -88,14 +89,15 @@ The nozzle is a 0.4mm for 1.75mm filament, a M6 thread, 1mm thread pitch. I got 
 
 Thermistor is EPCOS 100k ohms, 4.7k pullup. You may use others but must be configured on the firmware.
 
-Heater Cardrige is a 12v/30w. 
+Heater Cardrige is a 12v/30w.
 
-Nozzles compatible with E3D V6 should also work with the stock hexagon hotend as long as its for 1.75mm filament.
-
-The nozzle to bed distance is 0.9mm.
+Nozzles compatible with E3D V6 should also work with the stock hexagon hotend as long as its for 1.75mm filament. The "Quick Release" bracket holding the hot-end to the carriage is for 4.2mm slot/collar. The E3D V6 has a 6mm collar so it will be loose. An stl for a 6mm "Quick Release" bracket is availble [here](https://www.thingiverse.com/thing:1192896.
 
 To replace the nozzle heat up the extruder, when is warm you can unscrew the nozzle. I use a 5/8 combination wrench to hold the block, be carefull with the cables for the heater catridge and thermosistor. Nozzles are usually 7mm I use a 9/36 socket to screw the nozzle in. The original nozzle may have enlongated sides so to remove it you may need an open wrench or pliers.
 
+The fan, heater cardtrige, and thermistor are all connected with a JST-SM 2 pin connectors.
+
+The nozzle to bed distance is 0.9mm.
 
 Available at:<br>
 [Amazon](https://www.amazon.com/gp/product/B00W8FL5BS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00W8FL5BS&linkCode=as2&tag=ctk08-20&linkId=fb198b65e3dfeb2f29869fbcb71f9788)<br>
@@ -137,7 +139,7 @@ Forum discussion is available [here](http://community.robo3d.com/index.php?threa
 https://www.thingiverse.com/thing:1528588
 https://www.thingiverse.com/thing:1530555
 https://www.thingiverse.com/thing:1521037
-
+https://www.thingiverse.com/thing:1549206
 
 Carriage assembly [stl](https://www.thingiverse.com/thing:1557214) in Thingiverse.
 
@@ -276,3 +278,11 @@ This is a great FAQ [post](http://community.robo3d.com/index.php?threads/faq-r1-
 
 Check this [post](http://community.robo3d.com/index.php?threads/robo3d-replacements-and-upgrades-thread.6677/) for a good collection of information regarding repairs and parts found across the Robo's forum.
 
+
+
+# PARTS #
+
+| Part | Use | Notes |
+| -- | -- | -- |
+| JST-SM 2 pin connectors | fan, heater cardtrige, and thermistor | |
+| LM8UU bearings | X Carriage | |
