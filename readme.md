@@ -108,7 +108,15 @@ Available at:<br>
 
 ## Themistor ##
 
-The heat block on the stock hot end uses a 100k 4.7 pull-up thermistor. The stock thermistor is not the "stud" version just the play thermistor glued to the heat block. You can also use the **M3 stud** version but you may need to drill the heat block to widen the hole.
+
+The heat block on the stock hot end uses a 100k 4.7 pull-up thermistor. 
+
+Thermistors come in three main packages:<br>
+![thermistors](thermistor_types.png)
+
+The stock thermistor is the stock hexagon hotend of the R1+ is plain thermistor glued to the heat block. 
+
+You can also use the **M3 stud** or **M3 screw** version but you may need to drill the heat block to widen the hole.
 
 In the Marlin firmware the thermistor setting is:
 ```
@@ -117,9 +125,11 @@ In the Marlin firmware the thermistor setting is:
 
 Other settings for common thermistors are:
 
-A *Semitec 104GT2* thermistor is value 5 in the Marlin firmware.
-A *NTC 100K 1% 3950* thermistor is value 11 in the Marlin firmware.
-A *EPCOS 100k* thermistor is value 1 in the Marlin firmware, this is also the safest value for most 100k thermistors that cannt be identified.
+A *Semitec 104GT2* thermistor is value 5 in the Marlin firmware.<br>
+A *NTC 100K 1% 3950* thermistor is value 11 in the Marlin firmware.<br>
+A *EPCOS 100k* thermistor is value 1 in the Marlin firmware, this is also the safest value for most 100k thermistors that cannt be identified.<br>
+
+Check the section on the E3D V6 hotend for more info on thermistors.
 
 ### Fan ###
 
@@ -144,9 +154,6 @@ The main differance from the E3D V6 (V5) and the stock hexagon hotend in the R1 
 The V6 uses stud thermistors (M3) instead of bare thermistors. Depending on the thermistor of your hotend you may need to change the value of the constant `TEMP_SENSOR_0` in the "configuration.h" file of your Marlin firmware.
 
 The thermistor on E3D V6 varies from an original to the clones found online. The original V6 uses a variant of Semitec 104GT2 (4.7k pullup) thermistor while some come with an upgraded PT100 (more sensitive). Many clones come with a NTC 100K %1 3950 or variant. Make sure you check which thermistor comes with your hotend. 
-
-
-
 
 [Robo Forum Post](http://community.robo3d.com/index.php?threads/e3d-v6-information-installation-guides-and-review.3407/)<br>
 [Robo Forum Post](http://community.robo3d.com/index.php?threads/e3d-v6-information-and-installation-guide.17598/)<br>
