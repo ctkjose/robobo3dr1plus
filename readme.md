@@ -105,6 +105,11 @@ The fan, heater cardtrige, and thermistor are all connected with a JST-SM 2 pin 
 
 The nozzle to bed distance is 0.9mm.
 
+When buying a replacement hotend you may want to consider the following. Clone (budget) hotends that have the PTFE tubing go all the way into the heat break/nozzle throat tend to degrade rapidly and clog. Hotends with lined nozzle throats have lower tolerance to higher temperatures and depending on the quality degrade over time creating more clogs. A "all metal" hotend is a better option and allows for higher temperatures, in this case the nozzle throat is not lined and no tubing goes inside.
+
+When you get a clone/budget hotend you may wanna check that it its assemble propperly is common to find a nozzle throat upside down among other details that will give you troubles.
+
+
 Available at:<br>
 [Amazon](https://www.amazon.com/gp/product/B00W8FL5BS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00W8FL5BS&linkCode=as2&tag=ctk08-20&linkId=fb198b65e3dfeb2f29869fbcb71f9788)<br>
 [ebay](https://ebay.us/intMEF)<br>
@@ -120,9 +125,9 @@ The heat block on the stock hot end uses a 100k 4.7 pull-up thermistor. The defa
 Thermistors come in three main packages:<br>
 ![thermistors](thermistor_types.png)
 
-The stock thermistor is the stock hexagon hotend of the R1+ is plain thermistor glued to the heat block. 
+The thermistor in the stock hexagon hotend of the R1+ is plain thermistor glued to the heatblock. 
 
-You can also use the **M3 stud** or **M3 screw** version but you may need to drill the heat block to widen the hole.
+You can also use the **M3 stud** or **M3 screw** version but you may need to drill the heatblock to widen the hole.
 
 > When buying a thermistor be carefull to ensure that what you are buying is infact a thermosistor. Many thermocouples also come in a "stud" package and are easy to confuse. The RAMP 1.4 board will NOT accept a thermocouple without a conditioner/amplifier board/adapter to make it them work, also there is little support in firmwares like Marlin.
 
