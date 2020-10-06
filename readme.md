@@ -118,6 +118,8 @@ The stock thermistor is the stock hexagon hotend of the R1+ is plain thermistor 
 
 You can also use the **M3 stud** or **M3 screw** version but you may need to drill the heat block to widen the hole.
 
+> When buying a thermistor be carefull to ensure that what you are buying is infact a thermosistor. Many thermocouples also come in a "stud" package and are easy to confuse. The RAMP 1.4 board will NOT accept a thermocouple without a conditioner/amplifier board/adapter to make it them work, also there is little support in firmwares like Marlin.
+
 In the Marlin firmware the thermistor setting is:
 ```
 #define TEMP_SENSOR_0 1 
@@ -130,6 +132,8 @@ A *NTC 100K 1% 3950* thermistor is value 11 in the Marlin firmware.<br>
 A *EPCOS 100k* thermistor is value 1 in the Marlin firmware, this is also the safest value for most 100k thermistors that cannt be identified.<br>
 
 Check the section on the E3D V6 hotend for more info on thermistors.
+
+For more info check this excellent [guide](https://reprap.org/wiki/Thermistor) at RepRap.org.
 
 ### Fan ###
 
