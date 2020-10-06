@@ -1,28 +1,30 @@
 # All things Robo3D R1 Plus #
 
-This is a collection of resources for [Robo3D R1 Plus]() owners in hope they can keep their printers supported and shugging on!
+This is a collection of resources for [Robo3D R1 Plus]() owners in hope they can keep their printers supported and shugging on! 
+
+> Some of the links to parts in Amazon use the Associate Program and commisions may be earned. Most links are for actual parts purchased that work for me. Links to parts are for reference, please do your research before buying.
 
 # Specs and Parts #
 
-The R1 is pretty much a traditional RAMPS 1.4 3D printer as such is fairly easy to find parts and hack it.
+The R1 is pretty much a traditional [RAMPS 1.4](https://www.reprap.org/wiki/RAMPS_1.4) 3D printer as such is fairly easy to find parts and hack it.
+
+## Kinematics ## 
 
 **Motors**:<br>
-There are 4 motors in the R1+.
+The R1+ uses for NEMA-17 bi-polar stepper [motors](motors.md). Since the R1+ is based on a RAMPS 1.4 controller board any motor that works with RAMPS works on the Robo R1+.
 
-R1+ uses Nema17 Bipolar Stepper Motor (1.8° (200 steps), 5mm shaft). 
-
-Nema17 is the standard that states the dimensions, meanig that a Nema17 motor will fit your Robo in terms of opennings and screw holes. The other things to consider are torque and power.
+The basic specs for a motor are 1.8° (200 steps), 5mm shaft, and can be rated up to 4.2V.  
 
 Since a Robo use a RAMPS 1.4, max power is dictated by your motor's drivers (eg: [A4988](https://reprap.org/wiki/A4988)). In general it will be around 1.5A to 2A. It all depends on the quiality of the driver, heatsink and cooling. For an R1+ a power around 1.5 amps is more than enough.
 
-(As a side note remember that the board can only handle so much current used by all its components, the overall total power rating of a RAMPS 1.4 board is around 5A, it will vary by board quality and PCB traces used, but still a good reference value.)
+> As a side note remember that the board can only handle so much current used by all its components, the overall total power rating of a RAMPS 1.4 board is around 5A, it will vary by board quality and PCB traces used, but still a good reference value.
 
-The torque is around 45Ncm (64oz.in).
+The torque (holding torque) for motors should be around 45Ncm (64oz.in). The motor that needs the more torque is the extruder motor.
 
-The motors wiring in the Robo R1 Plus has a straight connector (see my [motor](motors.md) page for more details).
+When looking for a replacement motor make sure you get a motor with a straight connector (see my [motor](motors.md) page for more details) to avoid having to change the connector. Also the [motor](motors.md) page has a good explanation on how to re-wire other motors to work on a R1+.
 
-20 Teeth Timing Pulley (5mm ID shaft). [Amazon Kit](https://amzn.to/3esJ3JX)
 
+The motors use a 20 Teeth Timing Pulley (5mm ID shaft) for the belts. [Amazon Kit](https://amzn.to/3esJ3JX)
 
 **Belts**:<br>
 810 GT2 belts (GT2 Steps, 6mm wide, 2mm pitch). [Amazon Kit](https://amzn.to/3esJ3JX)
@@ -32,6 +34,8 @@ On the R1+ the z axis uses TR8-4 lead screws. Thats a trapezoidal acme screw in 
 
 The two tension screws with springs on the extruder are standard M4 screws 50mm in length.
 
+The Z-Axis is stabilized by two 8mm linear rods one on each side. (Diameter is 8mm, Tolerance is G6, Length: 377mm).
+
 **Y-AXIS(Bed)**<br>
 Bearings LM8UU
 
@@ -39,12 +43,14 @@ Bearings LM8UU
 
 20 Teeth Timing Pulley (5mm ID shaft),  (I presume that it is 6mm wide pulley since the belt is 6mm but I havent check.)
 
+The Y-Axis is framed by two 8mm linear rods. (Diameter is 8mm, Tolerance is G6, Length: 355mm).
+
 
 **X-AXIS**<br>
 
 The X-Axis carriage is horizontal version of the Pruisa i3 style carriage.
 
-The X-Axis carriage rides in two 8mm linear rods. 
+The X-Axis carriage rides in two 8mm linear rods. These rods are called precision rods. (Diameter is 8mm, Tolerance is G6, Length: 304mm).
 
 4ea LM8UU bearings (24mm length, 15mm outside diameter, 8mm inside diameter) support the carriage on the 8mm linear rods.
 
@@ -55,6 +61,7 @@ The width of the carriage as a line form the center point of each bearing openin
 ## Arduino Board ##
 
 The R1 uses a standard [Arduino MEGA 2560](https://amzn.to/3ewtlO4) board.
+
 
 ## RAMPS Board ##
 The R1+ may come with a RAMPS 1.3 or RAMPS 1.4 board. These two boards are almost the same.
@@ -115,12 +122,22 @@ A general accepted opinion is that PTFE lined throaths limits your tempetures (b
 
 ### E3D V6 Hotend Upgrade ###
 
+The main differance from the E3D V6 (V5) and the stock hexagon hotend in the R1 is that the Hexagon has a 4.2mm grooved mounting area and the V6 is 6mm. Using the quick-release bracket on the stock extruder will have too much giggle with the V6. 
+
 [Robo Forum Post](http://community.robo3d.com/index.php?threads/e3d-v6-information-installation-guides-and-review.3407/)<br>
 [Robo Forum Post](http://community.robo3d.com/index.php?threads/e3d-v6-information-and-installation-guide.17598/)<br>
 [Novice Expert Assemble Youtube Video](https://www.youtube.com/watch?v=0FB3MmgvWrw)<br>
 [Novice Expert Installation Youtube Video](https://www.youtube.com/watch?v=sZM6MIuPorQ)<br>
 
-### E3D V6 Titan ###
+
+### Upgrade to Titan Extruder with stock hexagon or E3DV6 hotends ###
+
+Forum discussion is available [here](http://community.robo3d.com/index.php?threads/e3d-titan-extruder.8246/).
+
+https://www.thingiverse.com/thing:1528588
+https://www.thingiverse.com/thing:1530555
+https://www.thingiverse.com/thing:1521037
+
 
 Carriage assembly [stl](https://www.thingiverse.com/thing:1557214) in Thingiverse.
 
