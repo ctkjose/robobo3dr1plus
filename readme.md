@@ -80,6 +80,12 @@ On R1+ board the extruder heater is connected to the plug labeled D9. This conne
 
 Here is a good [post](http://community.robo3d.com/index.php?threads/taking-the-r1-ramps-and-rewiring-to-make-generic-ramps-work.8356/) on the Robo's Forums about using a generic RAMPS board on a R1.
 
+## Extruder ##
+
+The extruder in the Robo R1+ is called a **direct drive** extrusion (vs **bowden** extrusion). In **direct extrusion** the extruder pushes the filament directly into the nozzle. In **bowden extrusion** the extruder is mounted somewhere else and filament is pushed through a PTFE Bowden tube to the nozzle.
+
+The type of extruder in the R1 is known as a **Greg's Wade's Geared Extruder** for more info check this (page)[https://reprap.org/wiki/Genealogy_/_Archeology_of_the_Greg%27s_Wade%27s_Geared_Extruder]) to learn about the history of this extruder. This design was made popular with the Prusa i3 printers.
+
 
 ## Hot End ##
 
@@ -157,7 +163,9 @@ The main differance from the E3D V6 (V5) and the stock hexagon hotend in the R1 
 
 The V6 uses stud thermistors (M3) instead of bare thermistors. Depending on the thermistor of your hotend you may need to change the value of the constant `TEMP_SENSOR_0` in the "configuration.h" file of your Marlin firmware.
 
-The thermistor on E3D V6 varies from an original to the clones found online. The original V6 uses a variant of Semitec 104GT2 (4.7k pullup) thermistor while some come with an upgraded PT100 (more sensitive). Many clones come with a NTC 100K %1 3950 or variant. Make sure you check which thermistor comes with your hotend. 
+The thermistor on E3D V6 varies from an original to the clones found online. The original V6 uses a variant of Semitec 104GT2 (4.7k pullup) thermistor while some come with an upgraded PT100 (more sensitive). Many clones come with a NTC 100K %1 3950 or variant. Make sure you check which thermistor comes with your hotend.
+
+The E3D V6 uses a PTFE tube that goes down the throat of the hotend. When using the stock extruder
 
 [Robo Forum Post](http://community.robo3d.com/index.php?threads/e3d-v6-information-installation-guides-and-review.3407/)<br>
 [Robo Forum Post](http://community.robo3d.com/index.php?threads/e3d-v6-information-and-installation-guide.17598/)<br>
