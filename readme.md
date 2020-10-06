@@ -109,7 +109,7 @@ Available at:<br>
 ## Themistor ##
 
 
-The heat block on the stock hot end uses a 100k 4.7 pull-up thermistor. 
+The heat block on the stock hot end uses a 100k 4.7 pull-up thermistor. The default connector to the thermistor is a 2 pin **JST-SM** connector.
 
 Thermistors come in three main packages:<br>
 ![thermistors](thermistor_types.png)
