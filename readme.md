@@ -106,6 +106,21 @@ Available at:<br>
 [partsbuilt](https://www.partsbuilt.com/r1-hotend-assembly-robo)<br>
 
 
+## Themistor ##
+
+The heat block on the stock hot end uses a 100k 4.7 pull-up thermistor. The stock thermistor is not the "stud" version just the play thermistor glued to the heat block. You can also use the **M3 stud** version but you may need to drill the heat block to widen the hole.
+
+In the Marlin firmware the thermistor setting is:
+```
+#define TEMP_SENSOR_0 1 
+```
+
+Other settings for common thermistors are:
+
+A *Semitec 104GT2* thermistor is value 5 in the Marlin firmware.
+A *NTC 100K 1% 3950* thermistor is value 11 in the Marlin firmware.
+A *EPCOS 100k* thermistor is value 1 in the Marlin firmware, this is also the safest value for most 100k thermistors that cannt be identified.
+
 ### Fan ###
 
 The stock hotend fan specs are:<br>
@@ -125,6 +140,13 @@ A general accepted opinion is that PTFE lined throaths limits your tempetures (b
 ### E3D V6 Hotend Upgrade ###
 
 The main differance from the E3D V6 (V5) and the stock hexagon hotend in the R1 is that the Hexagon has a 4.2mm grooved mounting area and the V6 is 6mm. Using the quick-release bracket on the stock extruder will have too much giggle with the V6. 
+
+The V6 uses stud thermistors (M3) instead of bare thermistors. Depending on the thermistor of your hotend you may need to change the value of the constant `TEMP_SENSOR_0` in the "configuration.h" file of your Marlin firmware.
+
+The thermistor on E3D V6 varies from an original to the clones found online. The original V6 uses a variant of Semitec 104GT2 (4.7k pullup) thermistor while some come with an upgraded PT100 (more sensitive). Many clones come with a NTC 100K %1 3950 or variant. Make sure you check which thermistor comes with your hotend. 
+
+
+
 
 [Robo Forum Post](http://community.robo3d.com/index.php?threads/e3d-v6-information-installation-guides-and-review.3407/)<br>
 [Robo Forum Post](http://community.robo3d.com/index.php?threads/e3d-v6-information-and-installation-guide.17598/)<br>
