@@ -89,15 +89,15 @@ The type of extruder in the R1 is known as a **Greg's Wade's Geared Extruder** f
 
 ## Hot End ##
 
-The R1+ comes with a "hexagon hotend".
+The R1+ comes with a **hexagon** hotend. This is a hotend for 1.75mm filaments. Compatible nozzles must have a M6 thread (1mm thread pitch) which are the most common online. The top collar/groove that holds the hotend to the X carriage in a Robo R1 is 4.2mm and is hold by a "Quick Release" bracket. 
 
-The nozzle is a 0.4mm for 1.75mm filament, a M6 thread, 1mm thread pitch. I got this replacement [set](https://amzn.to/3cshheR) in amazon.
+I got this replacement [set](https://amzn.to/3cshheR) in amazon.
 
 Thermistor is EPCOS 100k ohms, 4.7k pullup. You may use others but must be configured on the firmware.
 
 Heater Cardrige is a 12v/30w.
 
-Nozzles compatible with E3D V6 should also work with the stock hexagon hotend as long as its for 1.75mm filament. The "Quick Release" bracket holding the hot-end to the carriage is for 4.2mm slot/collar. The E3D V6 has a 6mm collar so it will be loose. An stl for a 6mm "Quick Release" bracket is availble [here](https://www.thingiverse.com/thing:1192896.
+Nozzles compatible with E3D V6 should also work with the stock hexagon hotend as long as its for 1.75mm filament. 
 
 To replace the nozzle heat up the extruder, when is warm you can unscrew the nozzle. I use a 5/8 combination wrench to hold the block, be carefull with the cables for the heater catridge and thermosistor. Nozzles are usually 7mm I use a 9/36 socket to screw the nozzle in. The original nozzle may have enlongated sides so to remove it you may need an open wrench or pliers.
 
@@ -105,7 +105,11 @@ The fan, heater cardtrige, and thermistor are all connected with a JST-SM 2 pin 
 
 The nozzle to bed distance is 0.9mm.
 
-When buying a replacement hotend you may want to consider the following. Clone (budget) hotends that have the PTFE tubing go all the way into the heat break/nozzle throat tend to degrade rapidly and clog. Hotends with lined nozzle throats have lower tolerance to higher temperatures and depending on the quality degrade over time creating more clogs. A "all metal" hotend is a better option and allows for higher temperatures, in this case the nozzle throat is not lined and no tubing goes inside.
+When buying a replacement hotend there are many considerations in particular with clone and budget options found online. I found this guide quite usefull to help me shop around and prepare myself when I got a V6 clone from Amazon. 
+
+Clone (budget) hotends that have the PTFE tubing go all the way into the heat break/nozzle throat tend to degrade rapidly and clog. Hotends with lined nozzle throats have lower tolerance to higher temperatures and depending on the quality degrade over time creating more clogs/jams. An "all metal" hotend is a better option and allows for higher temperatures, in this case the nozzle throat is not lined and no tubing goes inside.
+
+E3D and Micro-Swiss sell heatbreaks that you can buy and replace the one that came in the budget hotend, you can also find titinium throats. Micro-Swiss has an affordable $12.99 throat that is plated with "TwinClad XT" to improve the smothness/lubrication. Work of caution is that your clone heat block and heat sink may NOT have the exact diameter as an original V6 so a M6 thread may not work for you.
 
 When you get a clone/budget hotend you may wanna check that it its assemble propperly is common to find a nozzle throat upside down among other details that will give you troubles.
 
@@ -164,7 +168,7 @@ A general accepted opinion is that PTFE lined throaths limits your tempetures (b
 
 ### E3D V6 Hotend Upgrade ###
 
-The main differance from the E3D V6 (V5) and the stock hexagon hotend in the R1 is that the Hexagon has a 4.2mm grooved mounting area and the V6 is 6mm. Using the quick-release bracket on the stock extruder will have too much giggle with the V6. 
+The "Quick Release" bracket holding the hotend to the carriage in the R1+ is for 4.2mm slot/collar. The E3D V6 has a 6mm collar so it will be loose. An stl for a 6mm "Quick Release" bracket is availble [here](https://www.thingiverse.com/thing:1192896.
 
 The V6 uses stud thermistors (M3) instead of bare thermistors. Depending on the thermistor of your hotend you may need to change the value of the constant `TEMP_SENSOR_0` in the "configuration.h" file of your Marlin firmware.
 
