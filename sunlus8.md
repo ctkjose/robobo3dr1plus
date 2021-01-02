@@ -11,6 +11,9 @@ The Sunlu S8 follows the design (same kinematics) as the Ender 3 and CR-10S prin
 
 The printer uses a [MKS GEN 1 board](https://reprap.org/wiki/MKS_GEN_V1.1) like board that is mostly cross-over with a Creality CR10 boards. 
 The layout is similar to MKS SGEN boards but actual pin headers, and functionality is more close to a Creality V2.1 mainboard.
+
+![BOARD PINOUT](S8_PINOUT.png)
+
 ![BOARD WIRING](S8BOARD_WIRING.png)
 
 Like most of the 8Bit boards out there, this is in escence is just a [RAMPS 1.4](https://reprap.org/wiki/RAMPS_1.4) board with an integrated Arduino 2560 all in one board. The main differances are:
