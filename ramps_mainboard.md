@@ -34,24 +34,25 @@ A lot of boards used on 3D printers are direct decendant of RAMPS, and many are 
 | D34  | 34 | E1 Motor, Direction Pin | 34 | 34 | 34 | E1_DIR_PIN | |
 
 
-LCD Screen Reprap Smart Controller  12864-LCD, ST7920 SPI MODE
-LCD_PINS_D4, LCD_PINS_ENABLE, LCD_PINS_RS
-
-| Pin Name | Pin Number | Description | Ramps 1.x | Robo3D Ramps | Sunlo S8 | Marlin 1.x | Marlin 2.x |
-| -- | -- | -- | -- | -- | -- | -- | -- |
-| D31 | 31 | Button 1 Encoder | Aux-4, Pin 12 | Aux-4, Pin 12 | Exp-1, Pin 7 | BTN_EN1 | |
-| D33 | 33 | Button 2 Encoder | Aux-4, Pin 11 | Aux-4, Pin 11 | Exp-1, Pin 5 | BTN_EN2 | |
-| D35 | 35 | Button Switch | Aux-4, Pin 10 | Aux-4, Pin 10 | Exp-1, Pin 6 | BTN_EN | |
-| D37 | 37 | Beeper | Aux-4, Pin 9 | Aux-4, Pin 9 | Exp-1, Pin 13 | BEEPER_PIN | |
-| D17 | 17 | LCD Enable/MOSI | Aux-4, Pin 17 | Aux-4, Pin 17 | Exp-1, Pin 4 | LCD_PINS_ENABLE | |
-| SCK | 16 | LCD SPI SCLK (clock) | AUX-3, Pin 5 | AUX-3, Pin 5 | Exp-1, Pin 1 | LCD_PINS_RS | |
-| Data In | 23 | LCD D4 | AUX-3, Pin 5 | AUX-3, Pin 5 | Exp-1, Pin 8 | LCD_PINS_D4 | |
-
-LCD Screen Reprap Smart Controller (DOG-M128/SPI/ST7565R)
+## LCD Screen 12864-LCD, ST7920 SPI MODE (NO SD-CARD READER) ##
 
 Sunlo S8 Main Board has a dedicated 7X2 pin connector called EXP1 on the side of the board.
 On traditional Ramps Board the LCD uses the general AUX-4 (18 pin) connector on the side of the board, togheter with the SPI AUX-3
 
+LCD_PINS_D4, LCD_PINS_ENABLE, LCD_PINS_RS
+
+| Pin Name | Pin Number | Description | Ramps 1.x | Robo3D Ramps | Sunlo S8 | Marlin 1.x | Marlin 2.x |
+| -- | -- | -- | -- | -- | -- | -- | -- |
+| BTN EN1 | 31 | Button 1 Encoder | Aux-4, Pin 12 | Aux-4, Pin 12 | Exp-1, Pin 7 | BTN_EN1 | |
+| BTN EN2 | 33 | Button 2 Encoder | Aux-4, Pin 11 | Aux-4, Pin 11 | Exp-1, Pin 5 | BTN_EN2 | |
+| BTN EN | 35 | Button Switch | Aux-4, Pin 10 | Aux-4, Pin 10 | Exp-1, Pin 6 | BTN_EN | |
+| BEPPER | 37 | Beeper | Aux-4, Pin 9 | Aux-4, Pin 9 | Exp-1, Pin 13 | BEEPER_PIN | |
+| RESET | RESET | Reset |  |  | Exp-1, Pin 3 |  | |
+| D17 | 17 | LCD Enable/MOSI | Aux-4, Pin 17 | Aux-4, Pin 17 | Exp-1, Pin 4 | LCD_PINS_ENABLE | |
+| LCD-RS | 16 | LCD-RS | AUX-3, Pin 5 | AUX-3, Pin 5 | Exp-1, Pin 1 | LCD_PINS_RS | |
+| LCD-4 | 23 | Data in | AUX-3, Pin 5 | AUX-3, Pin 5 | Exp-1, Pin 3 | LCD_PINS_D4 | |
+
+## LCD Screen Reprap Smart Controller (DOG-M128/SPI/ST7565R) SPI MODE (WITH SD-CARD READER) ##
 
 | Pin Name | Pin Number | Description | Ramps 1.x | Robo3D Ramps | Sunlo S8 | Marlin 1.x | Marlin 2.x |
 | -- | -- | -- | -- | -- | -- | -- | -- |
