@@ -33,6 +33,13 @@ A lot of boards used on 3D printers are direct decendant of RAMPS, and many are 
 | D36  | 36 | E1 Motor, Step Pin | 36 | 36 | 36 | E1_STEP_PIN | |
 | D34  | 34 | E1 Motor, Direction Pin | 34 | 34 | 34 | E1_DIR_PIN | |
 
+> Pin value of `-1` means unused or unset. A pin with `NP` means there is no physical connector or not present on board.
+
+> On Ramps 1.X there are 4 stepper drivers. The fourth driver was originally specified for a second extruder (E1). In many boards its usually either use for the additional extruder or for a second Z motor on a dual motor setup.
+ 
+> Uses Arduino pins for the standard [Arduino Mega 2560](https://store.arduino.cc/arduino-mega-2560-rev3) board which are different to the actual pins in the [Atmega2560 chip](https://www.arduino.cc/en/Hacking/PinMapping2560) package. Manufacturers may change physical pins in the IC package.
+
+
 
 ## LCD Screen 12864-LCD, ST7920 SPI MODE (NO SD-CARD READER) ##
 
@@ -71,13 +78,6 @@ LCD_PINS_D4, LCD_PINS_ENABLE, LCD_PINS_RS
 | A4 | 29 | LCD A4 | AUX-4, Pin 13 | AUX-4, Pin 16 | Exp-1, Pin 1 | LCD_PINS_D7 | |
 
 
-
-> Pin value of `-1` means unused or unset. A pin with `NP` means there is no physical connector or not present on board.
-
-> On Ramps 1.X there are 4 stepper drivers. The fourth driver was originally specified for a second extruder (E1). In many boards its usually either use for the additional extruder or for a second Z motor on a dual motor setup.
- 
-
-> Uses Arduino pins for the standard [Arduino Mega 2560](https://store.arduino.cc/arduino-mega-2560-rev3) board which are different to the actual pins in the [Atmega2560 chip](https://www.arduino.cc/en/Hacking/PinMapping2560) package. Manufacturers may change physical pins in the IC package.
 
 
 
