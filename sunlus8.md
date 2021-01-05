@@ -16,6 +16,10 @@ The printer uses a [MKS](https://reprap.org/wiki/MKS_GEN_V1.1) like board. When 
 
 For more details on the pinout check my [RAMPS Pinout Page](ramps_mainboard.md). 
 
+The board has a EXP1 connector for the Smart Controller LCD, the following image has its pinout:
+![S8_EPX1_CONNECTOR](SUNLUS8_EXP1_PINOUT.png)
+
+
 ![BOARD WIRING](S8BOARD_WIRING.png)
 
 Like most of the 8Bit boards out there, this is in escence is just a [RAMPS 1.4](https://reprap.org/wiki/RAMPS_1.4) board with an integrated Arduino 2560 all in one board. The main differances are:
