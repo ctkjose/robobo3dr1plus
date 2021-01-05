@@ -4,6 +4,8 @@ This is a collection of resources for [Robo3D R1 Plus]() owners in hope they can
 
 > Some of the links to parts in Amazon use the Associate Program and commisions may be earned. Most links are for actual parts purchased that work for me. Links to parts are for reference, please do your research before buying.
 
+I also added a page for my [Sunlu S8](sunlus8.md).
+
 # Specs and Parts #
 
 The R1 is pretty much a traditional [RAMPS 1.4](https://www.reprap.org/wiki/RAMPS_1.4) 3D printer as such is fairly easy to find parts and hack it.
