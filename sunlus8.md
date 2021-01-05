@@ -9,10 +9,12 @@ The Sunlu S8 follows the design (same kinematics) as the Ender 3 and CR-10S prin
 
 ## Mainboard ##
 
-The printer uses a [MKS GEN 1 board](https://reprap.org/wiki/MKS_GEN_V1.1) like board that is mostly cross-over with a Creality CR10 boards. 
-The layout is similar to MKS SGEN boards but actual pin headers, and functionality is more close to a Creality V2.1 mainboard.
+The printer uses a [MKS](https://reprap.org/wiki/MKS_GEN_V1.1) like board. When it comes to asthetics and layout the board is mostly a cross-over with of  Creality CR10 boards, MKS Base 1.X and SKR.
+
 
 ![BOARD PINOUT](S8_PINOUT.png)
+
+For more details on the pinout check my [RAMPS Pinout Page](ramps_mainboard.md). 
 
 ![BOARD WIRING](S8BOARD_WIRING.png)
 
@@ -28,7 +30,7 @@ References:<br>
 
 The pin configuration for this board is the same as the RAMPS 1.4 in the Marlin Firmware.
 
-The board uses [Pololu A4988](https://amzn.to/3aoiO4p) drivers.
+The board uses [Pololu A4988](https://amzn.to/3aoiO4p) drivers. They are non replacable soldered in the board.
 
 
 ## Issues ##
@@ -47,6 +49,4 @@ When you put together the printer make sure that your X-Z gantry is square. I us
 
 In my case a limit switch had the paddle loose. Check your limit switches to ensure the metal paddle sits properly in the slot. You also have a spare switch that came with the printer.
 
-
-
-
+Springs in the bed do NOT offer enough tension which makes it difficult to level the bed and to keep the bed leveled. Putting one or more nuts (or washers) allows a temporary fix to give you more tension to level the bed. By my experience and comments of others this is the first thing you need to replace if you want a happy relationship with this printer. Get some sturdy 20mm or 25mm springs, same as the ones used on CR10 and Ender3 printers.
