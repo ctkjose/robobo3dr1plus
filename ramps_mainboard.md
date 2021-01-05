@@ -40,6 +40,7 @@ A lot of boards used on 3D printers are direct decendant of RAMPS, and many are 
  
 > Uses Arduino pins for the standard [Arduino Mega 2560](https://store.arduino.cc/arduino-mega-2560-rev3) board which are different to the actual pins in the [Atmega2560 chip](https://www.arduino.cc/en/Hacking/PinMapping2560) package. Manufacturers may change physical pins in the IC package.
 
+> These teables include the Sunlu S8 board. Check this page for [more](sunlus8.md) details.
 
 
 ## LCD Screen 12864-LCD, ST7920 SERIAL MODE (NO SD-CARD READER) ##
@@ -55,9 +56,9 @@ The basic pinout for an ST7920 is as follows. Notice this may actually vary on t
 
 | Pin Name | Pin Number | Description | Ramps 1.x | Robo3D Ramps | Sunlo S8 | MEGA 2560 | Marlin 1.x |
 | -- | -- | -- | -- | -- | -- | -- | -- |
-| RS/CS | 17 | LCD Enable Trigger<br>Serial Clock/CS<br>MOSI | Aux-4, Pin 17 | Aux-4, Pin 17 | Exp-1, Pin 4 | D17/RX2 | LCD_PINS_ENABLE |
-| SID | 16 | LCD Read write control/SID | AUX-4, Pin 18 | AUX-4, Pin 18 | Exp-1, Pin 1 | D16/TX2 | LCD_PINS_RS |
-| D4/DB4 | 23 | Data Bus (4bit mode) | AUX-4, Pin 16 | AUX-4, Pin 16 | Exp-1, Pin 3 | LCD_PINS_D4 | |
+| RS/CS | 17 | LCD Enable Trigger<br>Serial Clock/CS<br>MOSI | Aux-4, Pin 17 | Aux-4, Pin 17 | Exp-1, Pin 11 | D17/RX2 | LCD_PINS_ENABLE |
+| SID | 16 | LCD Read write control/SID | AUX-4, Pin 18 | AUX-4, Pin 18 | Exp-1, Pin 13 | D16/TX2 | LCD_PINS_RS |
+| D4/DB4 | 23 | Data Bus (4bit mode) | AUX-4, Pin 16 | AUX-4, Pin 16 | Exp-1, Pin 7 | LCD_PINS_D4 | |
 
 Using U8G library this display is initialized as:
 
@@ -78,20 +79,20 @@ The pin-out for the smart controller borrow from the previous section and adds t
 
 | Pin Name | Pin Number | Description | Ramps 1.x | Robo3D Ramps | Sunlo S8 | MEGA 2560 | Marlin 1.x |
 | -- | -- | -- | -- | -- | -- | -- | -- |
-| BTN EN1 | 31 | Button 1 Encoder | Aux-4, Pin 12 | Aux-4, Pin 12 | Exp-1, Pin 7 | D31 | BTN_EN1 |
-| BTN EN2 | 33 | Button 2 Encoder | Aux-4, Pin 11 | Aux-4, Pin 11 | Exp-1, Pin 5 | D33 | BTN_EN2 |
-| BTN EN | 35 | Button Switch | Aux-4, Pin 10 | Aux-4, Pin 10 | Exp-1, Pin 6 | D35 | BTN_EN |
-| BEPPER | 37 | Beeper | Aux-4, Pin 9 | Aux-4, Pin 9 | Exp-1, Pin 13 | D37 | BEEPER_PIN |
-| RESET | RESET | Reset |  |  | Exp-1, Pin 3 | Reset | |
+| BTN EN1 | 31 | Button 1 Encoder | Aux-4, Pin 12 | Aux-4, Pin 12 | Exp-1, Pin 8 | D31 | BTN_EN1 |
+| BTN EN2 | 33 | Button 2 Encoder | Aux-4, Pin 11 | Aux-4, Pin 11 | Exp-1, Pin 10 | D33 | BTN_EN2 |
+| BTN EN | 35 | Button Switch | Aux-4, Pin 10 | Aux-4, Pin 10 | Exp-1, Pin 9 | D35 | BTN_EN |
+| BEPPER | 37 | Beeper | Aux-4, Pin 9 | Aux-4, Pin 9 | Exp-1, Pin 2 | D37 | BEEPER_PIN |
+| RESET | RESET | Reset |  |  | Exp-1, Pin 12 | Reset | |
 
 If the model you have has an SD-Card reader then the following PINS apply:
 
 | Pin Name | Pin Number | Description | Ramps 1.x | Robo3D Ramps | Sunlo S8 | MEGA 2560 | Marlin 1.x |
 | -- | -- | -- | -- | -- | -- | -- | -- |
 | SCK | 52 | SD SCK | AUX-3, Pin 3 | AUX-3, Pin 3 | 52 (WI) | D52 | |
-| SD-CS/SS | 53 | SD CSEL/Serial/Enable Trigger | AUX-3, Pin 5 | AUX-3, Pin 5 | 53 (WI) | D53 | |
-| SD-MISO | 50 | SD-DO (MISO) | AUX-3, Pin 3 | AUX-3, Pin 3 | Exp-1, Pin 1 | LCD_PINS_RS | |
-| SD-MOSI | 51 | SD-DI (MOSI) | AUX-3, Pin 4 | AUX-3, Pin 4 | Exp-1, Pin 1 | LCD_PINS_RS | |
+| SD-CS/SS | 53 | SD CSEL/Serial/Enable Trigger | AUX-3, Pin 5 | AUX-3, Pin 5 | N/A | D53 | |
+| SD-MISO | 50 | SD-DO (MISO) | AUX-3, Pin 3 | AUX-3, Pin 3 | N/A | D50 | |
+| SD-MOSI | 51 | SD-DI (MOSI) | AUX-3, Pin 4 | AUX-3, Pin 4 | N/A | D51 | |
 
 
 RepRapDiscount offers an adapter for the Arduino Mega 2560 board:
@@ -99,20 +100,3 @@ RepRapDiscount offers an adapter for the Arduino Mega 2560 board:
 
 
 
-
-#define PIN_A0   (54)
-#define PIN_A1   (55)
-#define PIN_A2   (56)
-#define PIN_A3   (57)
-#define PIN_A4   (58)
-#define PIN_A5   (59)
-#define PIN_A6   (60)
-#define PIN_A7   (61)
-#define PIN_A8   (62)
-#define PIN_A9   (63)
-#define PIN_A10  (64)
-#define PIN_A11  (65)
-#define PIN_A12  (66)
-#define PIN_A13  (67)
-#define PIN_A14  (68)
-#define PIN_A15  (69)
