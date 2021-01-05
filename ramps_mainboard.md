@@ -45,7 +45,7 @@ A lot of boards used on 3D printers are direct decendant of RAMPS, and many are 
 
 ## LCD Screen 12864-LCD, ST7920 SERIAL MODE (NO SD-CARD READER) ##
 
-Sunlo S8 Main Board has a dedicated 7X2 pin connector called EXP1 on the side of the board.
+[Sunlo S8](sunlus8.md) Main Board has a dedicated 7X2 pin connector called EXP1 on the side of the board.
 On traditional Ramps Board the LCD uses the general AUX-4 (18 pin) connector on the side of the board, togheter with the SPI AUX-3
 
 The board uses Arduino's [Serial 2](https://www.arduino.cc/reference/en/language/functions/communication/serial/) pins (17 for RX and 16 for TX) to interface with the ST7920.
