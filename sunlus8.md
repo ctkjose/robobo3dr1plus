@@ -7,7 +7,7 @@ The Sunlu S8 follows the design (same kinematics) as the Ender 3 and CR-10S prin
 
 ## Kinematics ## 
 
-## Mainboard ##
+### Mainboard ###
 
 The printer uses a [MKS](https://reprap.org/wiki/MKS_GEN_V1.1) like board. When it comes to asthetics and layout the board is mostly a cross-over with of  Creality CR10 boards, MKS Base 1.X and SKR.
 
@@ -35,6 +35,33 @@ References:<br>
 The pin configuration for this board is the same as the RAMPS 1.4 in the Marlin Firmware.
 
 The board uses [Pololu A4988](https://amzn.to/3aoiO4p) drivers. They are non replacable soldered in the board.
+
+
+### Motors: ###
+The S8 uses for NEMA-17 bi-polar stepper [motors](motors.md). Since the S8 is based on a RAMPS 1.4 controller board any motor that works with RAMPS works on the S8.
+
+## Extruder ##
+
+The extruder in the S8 is called a **bowden** extrusion (vs **direct drive** extrusion). In **bowden extrusion** the extruder pushes the filament through a PTFE Bowden tube into the MK8 nozzle. The extruder is mounted in the side of the printer. directly into the nozzle. In **direct drive extrusion** the extruder is mounted with the nozzle and the filament is pushed directly into the nozzle.
+
+The extruder in the S8 is called a **"MK8 extruder drive"**. It uses a 40 teeth gear attached to the noozle to push the filament. Any MK8 extruder drive meant for Ender 3/3Pro CR-10, CR-10 S4 or CR-10 S5 will fit the S8.
+
+## Hotend ##
+
+The hotend is a MK8. The stock hotend has an aluminum cooling block. One good design choice in the S8 is that the throut into the heating block is a PTFE lined screw that goes from the top directly to the heating block, this helps avoid leaks and clogging.
+
+The heater block is also aluminum with a standrad 4.0mm brass plated noozle.
+
+## Cooling Fans ##
+
+The Cooling Fan on the S8 is a 40mm x 40mm x 10mm fan. It is a 24V and shoul be rated around 0.6A.
+
+## Power Supply ##
+
+The S8 uses a standard 24V power supply found in many 3D printers. The power supply is rated at 360W and delivers from to 14.6A to 15A depending in the model that came in your printer.
+
+To find a replacement just  search for "360w 24v 3d printer power supply" you will find a lot of options. The case is around 4.52in x 8.64in which is the common dimensions for a 3D printer power supply. The amperage of your power supply may be higher than 15A and thats ok. For better performance check that the replacement has a fan and even better if the fan is automatic (is off by default and turn-on only when the power supply is hot).
+
 
 
 ## Issues ##
