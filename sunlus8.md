@@ -73,15 +73,6 @@ I like this video in particular:
 
 [Thomas Sanladerer](https://www.youtube.com/watch?v=AaF28dnDgKA)
 
-
-Before attempting to level the bed I suggest you check the following:
-
-| Check: Proper Z-Home | |
-| -- | -- |
-| Under the bed you will find the 
-| Step: Turn on Printer.<br>Step: On the printer push once on the screen knob and select the **Prepare** menu by pushing the knob.<br>Step: Select **Auto Home**<br>Note: The printer will move all three axis and find the home position using the end-stop switches.| |
-| Check: Check if the noozle tip is below the glass bed or if is at level that it will allow to clear the glass without hitting it.<br> Step: If at plain sight you see that the noozle is below the glass bed so that when nozzle travels to the right it will not clear the bed, then you need to addjust the end-stop for the Z axis.<br>Step: If the nozzle is close enough,  | | 
-
 ## Issues ##
 
 The Sunlu S8 is an affordable printer, yet some units come with issues that you need to look out for.
