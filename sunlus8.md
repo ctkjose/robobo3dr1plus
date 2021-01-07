@@ -63,6 +63,24 @@ The S8 uses a standard 24V power supply found in many 3D printers. The power sup
 To find a replacement just  search for "360w 24v 3d printer power supply" you will find a lot of options. The case is around 4.52in x 8.64in which is the common dimensions for a 3D printer power supply. The amperage of your power supply may be higher than 15A and thats ok. For better performance check that the replacement has a fan and even better if the fan is automatic (is off by default and turn-on only when the power supply is hot).
 
 
+## Bed Leveling ##
+
+I created a guide of how I got my S8's bed level. It includes some pointer on how to handle the captchas. The guide is available [here](SUNLUS8_BED_LEVELING.pdf).
+
+The basic steps to level the bed on your Sunlu S8 are available [here](https://www.youtube.com/watch?v=ail-0E_LtV0) in a YouTube video form Sunlu, you may also want to watch other videos on YouTube that cover more details. Also the steps to level the bed in the S8 are the same for Ender 3 and CR10 printers.
+
+I like this video in particular:
+
+[Thomas Sanladerer](https://www.youtube.com/watch?v=AaF28dnDgKA)
+
+
+Before attempting to level the bed I suggest you check the following:
+
+| Check: Proper Z-Home | |
+| -- | -- |
+| Under the bed you will find the 
+| Step: Turn on Printer.<br>Step: On the printer push once on the screen knob and select the **Prepare** menu by pushing the knob.<br>Step: Select **Auto Home**<br>Note: The printer will move all three axis and find the home position using the end-stop switches.| |
+| Check: Check if the noozle tip is below the glass bed or if is at level that it will allow to clear the glass without hitting it.<br> Step: If at plain sight you see that the noozle is below the glass bed so that when nozzle travels to the right it will not clear the bed, then you need to addjust the end-stop for the Z axis.<br>Step: If the nozzle is close enough,  | | 
 
 ## Issues ##
 
