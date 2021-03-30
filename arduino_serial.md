@@ -81,7 +81,8 @@ The function of each bit is as follows:
 | 4 | **MSTR, Master/Slave Select = 1**<br>This bit selects Master SPI mode when set to one, and Slave SPI mode when cleared. |
 | 3 | **CPOL**<br>Sets the data clock to be idle when high if set to 1, idle when low if set to 0. |
 | 2 | **CPHA**<br>Samples data on the falling edge of the data clock when 1, rising edge when 0. | 
-| 1-0 | **SPR1 and SPR0**<br>Sets the SPI speed, 00 is fastest (4MHz) 11 is slowest (250KHz). |
+| 1 | **SPR1**<br>Combined with *SPR0* these two bits sets the divider for the SPI's clock speed. 00 is fastest (4MHz) 11 is slowest (250KHz). |
+| 0 | **SPR0**<br>Combined with *SPR1* these two bits sets the divider for the SPI's clock speed. 00 is fastest (4MHz) 11 is slowest (250KHz). |
 
 The `SPI` class (`#include <SPI.h>`) provides multiple methods to configure the control register. There are several things we need to know about an SPI interface to be able to configure the SPI bus.
 
@@ -160,6 +161,11 @@ SPSR = (SPSR & ~SPI_2XCLOCK_MASK) | ((clockDiv >> 2) & SPI_2XCLOCK_MASK);
 
 **NOTE:** The new way to setup SPI in Arduino is to use [`SPISettings`](https://www.arduino.cc/en/Reference/SPISettings).<br><br>
 For example: `SPISettings mySettting(speedMaximum, dataOrder, dataMode);`
+
+## SPI Internals ##
+
+The `SPCR` is the SPI's Control Register. The `SPDR` register holds the data recieved or sent. The `SPSR` register holds the bus status. 
+
 
 # References #
 [Atmega SPI in C++](http://web.csulb.edu/~hill/ee346/Lectures/19%20C++%20ATmega%20SPI%20Serial%20Comm.pdf)<br>
