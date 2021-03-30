@@ -2,7 +2,18 @@
 
 Straight from [wikipedia](https://en.wikipedia.org/wiki/AVR_microcontrollers) "AVR is a family of microcontrollers developed since 1996 by Atmel, acquired by Microchip Technology in 2016. These are modified Harvard architecture 8-bit RISC single-chip microcontrollers. AVR was one of the first microcontroller families to use on-chip flash memory for program storage, as opposed to one-time programmable ROM, EPROM, or EEPROM used by other microcontrollers at the time.".
 
-The ATMEGA328 (Arduino Uno) and ATMEGA2560 (Arduino Mega) are both 8bit RISC microcontrollers. The ATMEGA328 has three GPIO ports. 
+
+The ATMEGA328 (Arduino Uno), ATmega1280 and ATMEGA2560 (Arduino Mega) are both 8bit RISC microcontrollers running at 16MHz. 
+
+| CHIP | FLASH<br>MEMORY | SRAM | EEPROM | PORTS | DATA PINS | PWM PINS | Analog<br>Input Pins |
+| -- | -- | -- | -- | -- | -- | -- | -- |
+| 328P | 32kb | 2kb | 1kb | 3<br>(B, C, D) | 14 | 6 | 6 |
+| 1280 | 128kb | 8kb | 4kb |  | 54 | 15 | 16 | 
+| 1280 | 128kb | 8kb | 4kb | 12<br>(A...L) | 54 | 15 | 16 |
+
+[Comparison of boards](https://en.wikipedia.org/wiki/Comparison_of_single-board_microcontrollers)<br>
+
+For sake of using Arduino tools (IDE, etc) all of these three AVR are pretty much the same. The Arduino Mega has more GPIO ports but the actual corresponding pins on the board are not all close by, meaning you will find a pin for one port in one side and the another on the opposite side.
 
 
 # Bitwise Masks #
