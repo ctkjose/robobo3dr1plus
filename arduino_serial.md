@@ -32,7 +32,11 @@ value = (value | ~bitmask);
 
 The arduino has three port, Port B, Port C (also serves as analog inputs) and Port D.
 
-Each port is a register: `PORTB`, `PORTD` and `PORTC` are the 8 bit register for each port. Each bit in a register corresponds to a PIN in the board. For example bit 0 on Port B corresponds to pin 8 on the board, and bit 5 in Port D corresponds to pin 5 on the board.
+Each port has an output register: `PORTB`, `PORTD` and `PORTC` are the 8 bit register for each port. 
+
+The function `digitalPinToPort(pin)` returns the corresponding port number, Port B is number 2, Port C is number 3 and Port D is number 4
+
+Each bit in a register corresponds to a PIN in the board. For example bit 0 on Port B corresponds to pin 8 on the board, and bit 5 in Port D corresponds to pin 5 on the board.
 
 ![ARDUINO UNO PINS](https://upload.wikimedia.org/wikipedia/commons/c/c9/Pinout_of_ARDUINO_Board_and_ATMega328PU.svg)
 
@@ -66,8 +70,8 @@ unsigned int PIN8 = digitalPinToBitMask(8);
 DDRB = DRD | PIN8;
 ```
 
-[Port manipulation](https://www.arduino.cc/en/Reference/PortManipulation)
-
+[Port manipulation](https://www.arduino.cc/en/Reference/PortManipulation)<br>
+[Understanding digitalWrite()](https://garretlab.web.fc2.com/en/arduino/inside/hardware/arduino/avr/cores/arduino/wiring_digital.c/digitalWrite.html)<br>
 # Componets #
 
 
