@@ -109,7 +109,7 @@ ATmega Modes:
 | 2 | `SPI_MODE2` | 0x08, B00001000 | 1 | 0 | Sample Failing | Setup Rising |
 | 3 | `SPI_MODE3` | 0x0C, B00001100 | 1 | 1 | Setup Failing | Sample Rising |
 
-> Modes defined in [SPI.h](https://github.com/arduino/ArduinoCore-avr/blob/master/libraries/SPI/src/SPI.h).
+
 
 ```c
 //Behind the scenes:
@@ -165,6 +165,8 @@ For example: `SPISettings mySettting(speedMaximum, dataOrder, dataMode);`
 ## SPI Internals ##
 
 The `SPCR` is the SPI's Control Register. The `SPDR` register holds the data recieved or sent. The `SPSR` register holds the bus status. 
+
+Implementation of SPI is mainly found in [SPI.h](https://github.com/arduino/ArduinoCore-avr/blob/master/libraries/SPI/src/SPI.h).
 
 
 # References #
