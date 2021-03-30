@@ -65,13 +65,118 @@ To talk to a particular peripheral, you'll make that peripheral's CS line low an
 
 ### Configuration ###
 
+The SPI control register `SPCR` has 8 bits, each of which control a particular SPI setting. The `SPI` class (`#include <SPI.h>`) provides multiple methods to configure the control register. 
+
+
+
+| 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+| -- | -- | -- | -- | -- | -- | -- | -- |
+| SPIE | SPE  | DORD | MSTR | CPOL | CPHA | SPR1 | SPR0 |
+
+**SPIE, SPI Interrupt Enable = 0**<br>
+If it is set to 1 the SPI will generate an interrupt. The `SPIF` (contant in Arduino) bit in the `SPSR` Register is set once a whole byte was shifted (read/written). The SPI clock will stop.  
+
+if the Global Interrupt Enable bit in SREG is set. For our design example we will be polling the SPIF bit. Consequently, we will leave the SPIE bit in its default (SPIE = 0) state.
+
+**SPE, SPI Enable = 1**<br>
+When the SPE bit is one, the SPI is enabled. This bit must be set to enable any SPI operations.
+
+**DORD, Data Order = 0**<br>
+When the DORD bit is one (DORD = 1), the LSB of the data word is transmitted first, otherwise the MSB of the data word is transmitted first. In Arduino there is a constant named `DORD` that has the bit position (0x5, B00000101) of the DORD in the SPCR.
+
+**MSTR, Master/Slave Select = 1**<br>
+This bit selects Master SPI mode when set to one, and Slave SPI mode when cleared.
+
+**CPOL**<br>
+Sets the data clock to be idle when high if set to 1, idle when low if set to 0
+
+**CPHA**<br>
+Samples data on the falling edge of the data clock when 1, rising edge when 0
+
+**SPR1 and SPR0**<br>
+Sets the SPI speed, 00 is fastest (4MHz) 11 is slowest (250KHz). 
+
+
 There are several things we need to know about an SPI interface
 
+#### Is data shifted in most-significant *MSB* or least-significant *LSB* first? ####
+This is the endianness used to assamble the bits sent or received. The default in ATmega is 0 (constant `MSBFIRST`).
+
+Use `SPI.setBitOrder(order)` to set the bit order to least-significant *LSB* or most-significant *MSB*. Valid values are `LSBFIRST` (0) or `MSBFIRST` (1) defined in *SPI.h*.
+
+This function sets the DORD bit (bit 5, 0x20, B00100000) of the `SPCR` register
 
 
+#### Clock Polarity & Clock Phase? ####
+
+How is the data transmitted relative to the clock (data setup and data sampled).
+
+Use `SPI.setDataMode(mode)` to change the mode. The default is `SPI_MODE0`.
+
+ATmega Modes:
+
+| Mode | Arduino | Mask Value | Clock Polarity<br>(CPOL bit) | Clock Phase<br>(CPHA bit) | Leading Edge | Trailing Edge |
+| -- | -- | -- | -- | -- | -- | -- |
+| 0 | `SPI_MODE0` | 0x00, B00000000 | 0 | 0 | Sample Rising | Setup Failing |
+| 1 | `SPI_MODE1` | 0x04, B00000100 | 0 | 1 | Setup Rising | Sample Failing |
+| 2 | `SPI_MODE2` | 0x08, B00001000 | 1 | 0 | Sample Failing | Setup Rising |
+| 3 | `SPI_MODE3` | 0x0C, B00001100 | 1 | 1 | Setup Failing | Sample Rising |
+
+> Modes defined in [SPI.h](https://github.com/arduino/ArduinoCore-avr/blob/master/libraries/SPI/src/SPI.h).
+
+```c
+//Behind the scenes:
+#define SPI_MODE_MASK 0x0C  // CPOL = bit 3, CPHA = bit 2 on SPCR
+
+SPCR = (SPCR & ~SPI_MODE_MASK) | mode;
+```
+
+#### What speed is the SPI running at? ####
+
+The clock frecuency of the SPI pulse is a proportion of the board's Oscillator clock frecuency (FOSC), that is the clock can be 1/2, 1/4, 1/8. 1/16, 1/32, 1/64, or 1/128. Each proportion corresponds to a combination of the SPR1 and SPR0 bits on the SPCR.
+
+| Proportion | SPR1 | SPR0 | SPI2X | Bit |
+| -- | -- | -- | -- | -- |
+| 1/2 | 0 | 0 | 0 | 0x0, 0, B0000 |
+| 1/4 | 0 | 0 | 1 | 0x1, 1, B0001 |
+| 1/8 | 0 | 1 | 0 | 0x2, 2, B0010 |
+| 1/16 | 0 | 1 | 1 | 0x3, 3, B0011 |
+| 1/32 | 1 | 0 | 0 | 0x4, 4, B0100 |
+| 1/64 | 1 | 0 | 1 | 0x5, 5, B0101 |
+| 1/128 | 1 | 1 | 1 | 0x7, 7, B0111 |
+
+Using `SPSettings` or `SPI.setClockDivider()`  sets the SPR1 and SPR0 bits of the SPCR and the SPI2X of the SPSR.
+
+Using `SPSettings` you indicate a desired clock frequency up to the boards frequency. The code will find a the closests corresponding proportion.
+
+```c
+speedMaximum = 4000000; // One fourth of the 16Mhz 
+SPISettings mySettting(speedMaximum, MSBFIRST, SPI_MODE0);
+
+SPI.beginTransaction(mySettting);
+```
+
+Using `SPI.setClockDivider()` you specify the actual divider like `0`, `1`, `3` ... `7`.
+
+The clock is always set on the Master. 
+
+The default speed of a clock in SPI is either the board's Oscillator clock frecuency (FOSC) or 4000000.
+
+```c
+//Behind the scenes
+#define SPI_CLOCK_MASK 0x03  // SPR1 = bit 1, SPR0 = bit 0 on SPCR
+#define SPI_2XCLOCK_MASK 0x01  // SPI2X = bit 0 on SPSR
+
+SPCR = (SPCR & ~SPI_CLOCK_MASK) | (clockDiv & SPI_CLOCK_MASK);
+SPSR = (SPSR & ~SPI_2XCLOCK_MASK) | ((clockDiv >> 2) & SPI_2XCLOCK_MASK);
+```
+
+
+**NOTE:** The new way to setup SPI in Arduino is to use [`SPISettings`](https://www.arduino.cc/en/Reference/SPISettings).<br><br>
+For example: `SPISettings mySettting(speedMaximum, dataOrder, dataMode);`
 
 # References #
-
+[Atmega SPI in C++](http://web.csulb.edu/~hill/ee346/Lectures/19%20C++%20ATmega%20SPI%20Serial%20Comm.pdf)
 [Ref 1](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/chip-select-cs)
 https://www.arduino.cc/en/Tutorial/SPIEEPROM
 [Tutorial 1](https://electronoobs.com/eng_arduino_tut130.php)
