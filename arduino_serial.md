@@ -36,7 +36,9 @@ PORTB = B00111000;   // turns on 13,12,11; turns off 10,9,8
 
 ![SPI NETWORK](image.png)
 
-Serial Peripheral Interface (SPI) is a synchronous serial data protocol used by Microcontrollers for communicating with one or more peripheral devices quickly over short distances. It can also be used for communication between two microcontrollers.
+Serial Peripheral Interface (SPI) is a synchronous serial data protocol used by Microcontrollers for communicating with one or more peripheral devices quickly over short distances. It can also be used for communication between two microcontrollers. SPI is easy to build based on shift registers and provide many advantages to traditional serial communications.
+
+It differs from traditional serial communications in that is uses one line for the data and one line for the clock. The receiver is always in sync because it uses the clock signal to now when to read or send data.
 
 The SPI bus refers to the wires that connect the master device to the slave devices.
 
@@ -96,7 +98,14 @@ This function sets the DORD bit (bit 5, 0x20, B00100000) of the `SPCR` register
 
 #### Clock Polarity & Clock Phase? ####
 
-How is the data transmitted relative to the clock (data setup and data sampled).
+How is the data transmitted relative to the clock (data setup and data sampled). 
+
+The clock polarity indicates whether the clock line is high or low when idle. A value of 0 means that the clock idle state will be low, a value of 1 is the opposite.
+
+The clock phase indicates if the data is sampled on the falling edge or on the rising edge. SPI communications are synced by the clock line which oscillates between low and high. An action (read/write) on the bus can happen either in the *rising* (the clock goes from low to high), or the *falling* (the clock goes from high to low).
+
+> The term *clock edge* is used to refer to the clock phase, as in the *falling edge* and *rising edge*.
+
 
 Use `SPI.setDataMode(mode)` to change the mode. The default is `SPI_MODE0`.
 
@@ -170,7 +179,9 @@ Implementation of SPI is mainly found in [SPI.h](https://github.com/arduino/Ardu
 
 
 # References #
+[Basic SPI](https://www.arduino.cc/en/reference/SPI)<br>
+[Good introduction](https://www.arduino.cc/en/Tutorial/SPIEEPROM)<br>
+[Sparkfun tutorial](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/introduction)<br>
 [Atmega SPI in C++](http://web.csulb.edu/~hill/ee346/Lectures/19%20C++%20ATmega%20SPI%20Serial%20Comm.pdf)<br>
-[Ref 1](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/chip-select-cs)<br>
-https://www.arduino.cc/en/Tutorial/SPIEEPROM<br>
+[SPI Tutorial at analog.com](https://www.analog.com/en/analog-dialogue/articles/introduction-to-spi-interface.html#)<br>
 [Tutorial 1](https://electronoobs.com/eng_arduino_tut130.php)<br>
