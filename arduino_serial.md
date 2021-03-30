@@ -65,39 +65,25 @@ To talk to a particular peripheral, you'll make that peripheral's CS line low an
 
 ### Configuration ###
 
-The SPI control register `SPCR` has 8 bits, each of which control a particular SPI setting. The `SPI` class (`#include <SPI.h>`) provides multiple methods to configure the control register. 
-
-
+The SPI control register `SPCR` has 8 bits, each of which control a particular SPI setting. 
 
 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 | -- | -- | -- | -- | -- | -- | -- | -- |
 | SPIE | SPE  | DORD | MSTR | CPOL | CPHA | SPR1 | SPR0 |
 
-**SPIE, SPI Interrupt Enable = 0**<br>
-If it is set to 1 the SPI will generate an interrupt. The `SPIF` (contant in Arduino) bit in the `SPSR` Register is set once a whole byte was shifted (read/written). The SPI clock will stop.  
+The function of each bit is as follows:
 
-if the Global Interrupt Enable bit in SREG is set. For our design example we will be polling the SPIF bit. Consequently, we will leave the SPIE bit in its default (SPIE = 0) state.
+| Bit | Description |
+| -- | -- |
+| 7 | **SPIE, SPI Interrupt Enable = 0**<br>If it is set to 1 the SPI will generate an interrupt. The `SPIF` (contant in Arduino) bit in the `SPSR` Register is set once a whole byte was shifted (read/written). The SPI clock will stop. | 
+| 6 | **SPE, SPI Enable = 1**<br>When the SPE bit is one, the SPI is enabled. This bit must be set to enable any SPI operations. |
+| 5 | **DORD, Data Order = 0**<br>When the DORD bit is one (DORD = 1), the LSB of the data word is transmitted first, otherwise the MSB of the data word is transmitted first. In Arduino there is a constant named `DORD` that has the bit position (0x5, B00000101) of the DORD in the SPCR. |
+| 4 | **MSTR, Master/Slave Select = 1**<br>This bit selects Master SPI mode when set to one, and Slave SPI mode when cleared. |
+| 3 | **CPOL**<br>Sets the data clock to be idle when high if set to 1, idle when low if set to 0. |
+| 2 | **CPHA**<br>Samples data on the falling edge of the data clock when 1, rising edge when 0. | 
+| 1-0 | **SPR1 and SPR0**<br>Sets the SPI speed, 00 is fastest (4MHz) 11 is slowest (250KHz). |
 
-**SPE, SPI Enable = 1**<br>
-When the SPE bit is one, the SPI is enabled. This bit must be set to enable any SPI operations.
-
-**DORD, Data Order = 0**<br>
-When the DORD bit is one (DORD = 1), the LSB of the data word is transmitted first, otherwise the MSB of the data word is transmitted first. In Arduino there is a constant named `DORD` that has the bit position (0x5, B00000101) of the DORD in the SPCR.
-
-**MSTR, Master/Slave Select = 1**<br>
-This bit selects Master SPI mode when set to one, and Slave SPI mode when cleared.
-
-**CPOL**<br>
-Sets the data clock to be idle when high if set to 1, idle when low if set to 0
-
-**CPHA**<br>
-Samples data on the falling edge of the data clock when 1, rising edge when 0
-
-**SPR1 and SPR0**<br>
-Sets the SPI speed, 00 is fastest (4MHz) 11 is slowest (250KHz). 
-
-
-There are several things we need to know about an SPI interface
+The `SPI` class (`#include <SPI.h>`) provides multiple methods to configure the control register. There are several things we need to know about an SPI interface to be able to configure the SPI bus.
 
 #### Is data shifted in most-significant *MSB* or least-significant *LSB* first? ####
 This is the endianness used to assamble the bits sent or received. The default in ATmega is 0 (constant `MSBFIRST`).
@@ -176,7 +162,7 @@ SPSR = (SPSR & ~SPI_2XCLOCK_MASK) | ((clockDiv >> 2) & SPI_2XCLOCK_MASK);
 For example: `SPISettings mySettting(speedMaximum, dataOrder, dataMode);`
 
 # References #
-[Atmega SPI in C++](http://web.csulb.edu/~hill/ee346/Lectures/19%20C++%20ATmega%20SPI%20Serial%20Comm.pdf)
-[Ref 1](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/chip-select-cs)
-https://www.arduino.cc/en/Tutorial/SPIEEPROM
-[Tutorial 1](https://electronoobs.com/eng_arduino_tut130.php)
+[Atmega SPI in C++](http://web.csulb.edu/~hill/ee346/Lectures/19%20C++%20ATmega%20SPI%20Serial%20Comm.pdf)<br>
+[Ref 1](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/chip-select-cs)<br>
+https://www.arduino.cc/en/Tutorial/SPIEEPROM<br>
+[Tutorial 1](https://electronoobs.com/eng_arduino_tut130.php)<br>
