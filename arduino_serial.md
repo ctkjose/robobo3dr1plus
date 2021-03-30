@@ -55,7 +55,7 @@ DDRB = B00000001; //set bit 0 to OUTPUT, bit 0 corresponds to PIN 8
 PORTB = B00000001; //sets bit 0 HIGH, which corresponds to PIN 8
 ```
 
-Using `DDRB = B00000001;` has one problems, it sets bit 0 to OUTPUT but it also sets the rest to INPUT. Setting a PIN to INPUT/OUTPUT is done safetly by using bitwise operations:
+Using `DDRB = B00000001;` has one problem, it sets bit 0 to OUTPUT but it also sets the rest to INPUT. Setting a PIN to INPUT/OUTPUT is done safetly by using bitwise operations:
 
 ```c
 //only sets bit 0 as output, the rest keep their current state
@@ -66,12 +66,52 @@ The macro `digitalPinToBitMask(pin)` can be used to obtain a bit mask for a pin.
 
 ```c
 //only sets bit 0 as output, the rest keep their current state
-unsigned int PIN8 = digitalPinToBitMask(8);
-DDRB = DRD | PIN8;
+unsigned int maskbitPin8 = digitalPinToBitMask(8);
+DDRB = DRD | maskbitPin8;
 ```
+
+When manipulating the ports using its register you MUST be careful to understand what pins you use and modify. For example in Port D, the pins 0 and 1 are used for the UART/USB serial, if you modify the direction (INPUT/OUTPUT) the serial will stop working. 
+
+Another consideration is that using the port register directly may not work on other AVR with different port registers. The following code uses [portOutputRegister(port)](https://garretlab.web.fc2.com/en/arduino/inside/hardware/arduino/avr/cores/arduino/Arduino.h/portOutputRegister.html) to
+
+```c
+//Port Numbers PA=1,PB=2,PC=3,PD=4,PE=5,PF=6,PG=7,PH=8,PJ=10,PK=11,PL=12 
+unsigned int port = 2; ///Port B 
+out = portOutputRegister(port); //out is a pointer to an uint8_t, in this case &PORTB
+
+unsigned int maskbitPin8 = digitalPinToBitMask(8);
+
+//set high
+*out = out | maskbitPin8;
+
+//set low
+*out = out & ~maskbitPin8;
+```
+
+The above code will be complete if we consider interrupts, we should turn off interrups off while we write to the port to ensure an interrupt does not change the value of our output register. The full code will be:
+
+
+```c
+//Port Numbers PA=1,PB=2,PC=3,PD=4,PE=5,PF=6,PG=7,PH=8,PJ=10,PK=11,PL=12 
+unsigned int port = 2; ///Port B 
+out = portOutputRegister(port); //out is a pointer to an uint8_t, in this case &PORTB
+
+unsigned int maskbitPin8 = digitalPinToBitMask(8);
+
+uint8_t oldSREG = SREG; //save contents of the status register (SREG) which has the interrupt indicator. 
+cli(); //disable interrupts
+
+//set high
+*out = out | maskbitPin8;
+
+SREG = oldSREG; //restore SREG to its original state
+```
+
 
 [Port manipulation](https://www.arduino.cc/en/Reference/PortManipulation)<br>
 [Understanding digitalWrite()](https://garretlab.web.fc2.com/en/arduino/inside/hardware/arduino/avr/cores/arduino/wiring_digital.c/digitalWrite.html)<br>
+[portOutputRegister(port)](https://garretlab.web.fc2.com/en/arduino/inside/hardware/arduino/avr/cores/arduino/Arduino.h/portOutputRegister.html)<br>
+
 # Componets #
 
 
@@ -257,4 +297,5 @@ Implementation of SPI is mainly found in [SPI.h](https://github.com/arduino/Ardu
 [Sparkfun tutorial](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/introduction)<br>
 [Atmega SPI in C++](http://web.csulb.edu/~hill/ee346/Lectures/19%20C++%20ATmega%20SPI%20Serial%20Comm.pdf)<br>
 [SPI Tutorial at analog.com](https://www.analog.com/en/analog-dialogue/articles/introduction-to-spi-interface.html#)<br>
+[SPI electronic considerations](https://www.pjrc.com/better-spi-bus-design-in-3-steps/)<br>
 [Tutorial 1](https://electronoobs.com/eng_arduino_tut130.php)<br>
