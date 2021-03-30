@@ -1,6 +1,15 @@
+# AVR #
+
+Straight from [wikipedia](https://en.wikipedia.org/wiki/AVR_microcontrollers) "AVR is a family of microcontrollers developed since 1996 by Atmel, acquired by Microchip Technology in 2016. These are modified Harvard architecture 8-bit RISC single-chip microcontrollers. AVR was one of the first microcontroller families to use on-chip flash memory for program storage, as opposed to one-time programmable ROM, EPROM, or EEPROM used by other microcontrollers at the time.".
+
+The ATMEGA328 (Arduino Uno) and ATMEGA2560 (Arduino Mega) are both 8bit RISC microcontrollers. The ATMEGA328 has three GPIO ports. 
+
+
 # Bitwise Masks #
 
-AVR like ATmega are commonly LSB 0, the Least Significant BIT is bit 0 and the Most Significant BIT is bit 7.
+Many operations in the Arduino require you to manipulate 8bit integers like registers, etc. This is a quick review of common bitwise operations and masks that are very handy.
+
+> AVR's like ATmega are commonly LSB 0, the Least Significant BIT is bit 0 and the Most Significant BIT is bit 7.
 
 ```c
 //Check status of bit
@@ -28,19 +37,32 @@ value = (value | ~bitmask);
 ```
 
 
-# Register Control of Ports #
+# Register Control of GPIO Ports #
 
-The arduino has three port, Port B, Port C (also serves as analog inputs) and Port D.
+Working directly with the register can result in faster execution and allow you to read or write to multiple pins in a single instruction. 
 
-Each port has an output register: `PORTB`, `PORTD` and `PORTC` are the 8 bit register for each port. 
+> *NOTE* Maniging the GPIO registers has its advantages, but it also makes you responsible for many things that used to be handled behind the scenes by `pinMode()`, `digitalRead()` or `digitalWrite()`.
 
-The function `digitalPinToPort(pin)` returns the corresponding port number, Port B is number 2, Port C is number 3 and Port D is number 4
+
+The ATMEGA328 (Arduino Uno) and ATMEGA2560 (Arduino Mega) have three GPIO ports in common Port B, Port C (also serves as analog inputs) and Port D. 
+
+> ATMEGA2560 has more ports GPIO available.
+
+Every GPIO port is 8 bit wide. Every GPIO port has 3 registers associated: a "Data Direction Register" (DDR), "Port In" (PIN), and the "Port" (Port).
+
+The  "Data Direction Register" (DDRX) configures the direction of the pin as an INPUT or OUTPUT. In arduino these registers are: `DDRB`, `DDRC` and `DDRD`.
+
+The "Port In" (PINx) register is used to read data from a pin when the pin is set as INPUT or INPUT_PULLUP. In arduino these registers are: `PINB`, `PINC` and `PIND`.
+
+The "Port" (PORTX) has two purposes. The main one is to set the state (HIGH/LOW) of a pin when that pin is set as an OUTPUT. The second use is to indicate if pull up resistors are used when the pin is set as INPUT. In arduino these registers are: `PORTB`, `PORTD` and `PORTC`.
+
 
 Each bit in a register corresponds to a PIN in the board. For example bit 0 on Port B corresponds to pin 8 on the board, and bit 5 in Port D corresponds to pin 5 on the board.
 
 ![ARDUINO UNO PINS](https://upload.wikimedia.org/wikipedia/commons/c/c9/Pinout_of_ARDUINO_Board_and_ATMega328PU.svg)
 
-Each port has a direction register: `DDRB`, `DDRC` and `DDRD`.
+
+When you use `pinMode()`, `digitalRead()` or `digitalWrite()` internally the Arduino is manipulating the ports that corresponds to the pin.
 
 ```c
 //Traditional pin manipulation
@@ -48,6 +70,16 @@ pinMode(8, OUTPUT); //Pin D8 on board
 digitalWrite(8, HIGH);
 
 ```
+
+The function [`pinMode()`](https://garretlab.web.fc2.com/en/arduino/inside/hardware/arduino/avr/cores/arduino/wiring_digital.c/pinMode.html) sets the corresponding direction register in this example the `DDRB`.
+
+The function [`digitalWrite()`](https://garretlab.web.fc2.com/en/arduino/inside/hardware/arduino/avr/cores/arduino/wiring_digital.c/digitalWrite.html) sets bit high or low on the corresponding output register in this example the `PORTB`.
+
+Setting a bit to 0 in a *DDR* register like `DDRB` sets the pin mode to input. If you set the same bit to 1 in the corresponding *PORT* register like `PORTB` then the input will use pull-up resistors. Setting a bit to 1 in a *DDR* register set the pin mode to OUTPUT.
+
+> If the *DDR* and *PORT* bit are both set to 0 then the pin is said to be in a tri-state mode.
+
+While a bit in *DDR* is set to 1 (OUTPUT) you can set the corresponding pin to LOW/HIGHT by setting the bit to 1 or 0 in the corresponding *PORT* register.
 
 ```c
 //Using Port Register
@@ -72,7 +104,7 @@ DDRB = DRD | maskbitPin8;
 
 When manipulating the ports using its register you MUST be careful to understand what pins you use and modify. For example in Port D, the pins 0 and 1 are used for the UART/USB serial, if you modify the direction (INPUT/OUTPUT) the serial will stop working. 
 
-Another consideration is that using the port register directly may not work on other AVR with different port registers. The following code uses [portOutputRegister(port)](https://garretlab.web.fc2.com/en/arduino/inside/hardware/arduino/avr/cores/arduino/Arduino.h/portOutputRegister.html) to
+Another consideration is that using the port register directly may not work on other AVR with different port registers. The following code uses [portOutputRegister(port)](https://garretlab.web.fc2.com/en/arduino/inside/hardware/arduino/avr/cores/arduino/Arduino.h/portOutputRegister.html) to 
 
 ```c
 //Port Numbers PA=1,PB=2,PC=3,PD=4,PE=5,PF=6,PG=7,PH=8,PJ=10,PK=11,PL=12 
@@ -94,6 +126,7 @@ The above code will be complete if we consider interrupts, we should turn off in
 ```c
 //Port Numbers PA=1,PB=2,PC=3,PD=4,PE=5,PF=6,PG=7,PH=8,PJ=10,PK=11,PL=12 
 unsigned int port = 2; ///Port B 
+//The function `digitalPinToPort(pin)` returns the corresponding port number, Port B is number 2, Port C is number 3 and Port D is number 4
 out = portOutputRegister(port); //out is a pointer to an uint8_t, in this case &PORTB
 
 unsigned int maskbitPin8 = digitalPinToBitMask(8);
