@@ -69,6 +69,8 @@ The R1 uses a standard [Arduino MEGA 2560](https://amzn.to/3ewtlO4) board.
 
 The R1+ may come with a RAMPS 1.3 or RAMPS 1.4 board. These two boards are almost the same.
 
+![RAMPS PINOUT](ramps_board_v14.png)
+
 The R1+ board is based on a [RAMPS 1.4.3](https://reprap.org/wiki/RAMPS_1.4) design.
 ![RAMPS WIRING](R1WIRINGDIAG.png)
 
