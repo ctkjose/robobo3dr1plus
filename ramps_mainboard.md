@@ -1,5 +1,6 @@
-A lot of boards used on 3D printers are direct decendant of RAMPS, and many are actually clones with different layouts, dedicated connectors or you will find minimal electrical changes (mosfest, power regulators, etc) but in excence are the same and use the pins as RAMPS. In many you will find that firmwares like Marlin simply treat them like RAMPS.
+A lot of boards used on 3D printers are direct decendant of RAMPS, and many are actually clones with different layouts, dedicated connectors or you will find minimal electrical changes (mosfest, power regulators, etc) but in excence they are the same and use the same pins as RAMPS. In many you will find that firmwares like Marlin simply treat them like RAMPS.
 
+![RAMPS PINOUT](ramps_board_v14.png)
 
 # Pinout of RAMPS based Boards #
 
