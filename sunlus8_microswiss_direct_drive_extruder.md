@@ -7,6 +7,14 @@ The official instructions to install this kit are available [here](https://cdn.s
 
 ## Firmware ##
 
+Change the direction of extruder:
+```c
+// For direct drive extruder v9 set to true, for geared extruder set to false.
+#define INVERT_E0_DIR false
+```
+
+
+
 Before compiling ensure that you have the U8G2 Library installed. In Arduino IDE go to "Manage Libraries" and search for "U8g2", if the library is not installed press the "Install" button.
 
 
@@ -46,6 +54,13 @@ Set probe edge:
 #define MIN_PROBE_EDGE 50
 ```
 
+```c
+
+#define UNKNOWN_Z_NO_RAISE // Don't raise Z (lower the bed) if Z is "unknown." For beds that fall when Z is powered off.
+
+#define Z_HOMING_HEIGHT 0  // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
+                             // Be sure you have this distance over your Z_MAX_POS in case.
+```                         
 
 Enable the following options by removing the double slash `//` in fron of each line:
 ```c
@@ -55,12 +70,18 @@ Enable the following options by removing the double slash `//` in fron of each l
 #define LCD_BED_LEVELING
 
 #define LEVEL_BED_CORNERS
+
+#define FILAMENT_RUNOUT_SENSOR
+
+#define NOZZLE_PARK_FEATURE
 ```
 
 Set the number of grid points per dimension use in bed leveling to 4:
 
 ```c
-#define GRID_MAX_POINTS_X 4 
+#define MESH_INSET 10
+
+#define GRID_MAX_POINTS_X 4
 ```
 
 Edit the file `ultralcd_st7920_u8glib_rrd.h` in Arduino IDE. Find the following lines, remove the `//` in front and set the corresponding values as shown below:
