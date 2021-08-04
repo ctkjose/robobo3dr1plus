@@ -4,6 +4,58 @@ This document include my notes on upgrading a Sunlu-S8 (CR10 clone) to use the M
 
 The official instructions to install this kit are available [here](https://cdn.shopify.com/s/files/1/1210/0176/files/Micro_Swiss_Direct_Drive_Extruder_Installation_Instructions.pdf?v=1592671102).
 
+## Calibrating the extruder ##
+
+A calibration guide for the new extruder is available [here](https://all3dp.com/2/extruder-calibration-6-easy-steps-2/).
+
+Initialize the steps/mm of the extruder to the recomended value of 130mm by sending the [M92](https://marlinfw.org/docs/gcode/M092.html) gcode command.
+```
+M92 E130;
+```
+
+## PID Auto tunning ##
+
+Run PID autotune for a temperature of 200 (PLA).
+
+```
+M303 S200 U1;
+```
+
+> Use the `U1` parameter to save the results automatically.
+
+If the parameter `U1` is not supported by your firmware just run `M303 S200`. Then set your PID values with a `M301` command.
+
+```
+M301 P29.86 I3.37 D66.04;
+```
+
+The parameter `P` corresponds to the `Kp` value shown as the result of a M303 command. The parameter `I` is for `Ki` and `D` is for `Kd`.
+
+
+From a flat surface like the extruder top or the filament gud
+Amount to Extrude
+
+M503 to see current steps per mm.
+503
+Issue a `G92` to reset the current position of the extruder as zero.
+
+`G92 E0;` 
+
+Issue a `G91` to put the printer in relative movement mode.
+
+```
+G91;
+```
+M92
+Extrude 20mm of filament.
+`G1 E20 F300;`
+
+M92
+```
+M92 E130;
+```
+
+
 
 ## Firmware ##
 
