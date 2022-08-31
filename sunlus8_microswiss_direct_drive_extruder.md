@@ -179,3 +179,17 @@ M104 S0 ;Turn-off hotend
 M140 S0 ;Turn-off bed
 M84 X Y E ;Disable all steppers but Z
 ```
+
+BLTouch offsets
+```c
+Use the following for the 4010 and 4020 mounts with the sensor on the right side.
+#define X_PROBE_OFFSET_FROM_EXTRUDER 33 // X offset: -left +right [of the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -10 // Y offset: -front +behind [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER 0 // Z offset: -below +above [the nozzle]
+
+Use the following for the 5015 mounts with the sensor on the left side.
+#define X_PROBE_OFFSET_FROM_EXTRUDER -38 // X offset: -left +right [of the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -8 // Y offset: -front +behind [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER 0 // Z offset: -below +above [the nozzle]
+```
+
