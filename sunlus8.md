@@ -56,7 +56,7 @@ The heater block is also aluminum with a standrad 4.0mm brass plated noozle.
 
 ## Cooling Fans ##
 
-The Cooling Fan on the S8 is a 40mm x 40mm x 10mm fan. It is a 24V and shoul be rated around 0.6A.
+The Cooling Fan on the S8 is a 40mm x 40mm x 10mm fan. It is a 24V and should be rated around 0.6A.
 
 ## Power Supply ##
 
