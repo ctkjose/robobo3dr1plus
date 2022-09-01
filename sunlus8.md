@@ -46,6 +46,8 @@ The extruder in the S8 is called a **bowden** extrusion (vs **direct drive** ext
 
 The extruder in the S8 is called a **"MK8 extruder drive"**. It uses a 40 teeth gear attached to the motor shaft to push the filament. Any MK8 extruder drive meant for Ender 3/3Pro CR-10, CR-10 S4 or CR-10 S5 will fit the S8.
 
+This is [my guide](sunlus8_microswiss_direct_drive_extruder.md) on upgrading to a Micro Swiss Direct Drive extruder.
+
 ## Hotend ##
 
 The hotend is a MK8. The stock hotend has an aluminum cooling block. One good design choice in the S8 is that the throut into the heating block is a PTFE lined screw that goes from the top directly to the heating block, this helps avoid leaks and clogging.
