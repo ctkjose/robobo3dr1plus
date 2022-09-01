@@ -149,6 +149,17 @@ Edit the file `ultralcd_st7920_u8glib_rrd.h` in Arduino IDE. Find the following 
 
 # BL Touch
 
+BLTouch, 
+
+A 3D Touch is essentially a clone of the early BL touch models. The 3D Touch uses a Atmel ATtiny13A, an electromagnet and a pressure pin. (Draws 15 mA)
+The BL Touch includes a microcontroller 
+
+Both devices have great tolerances but the BL Touch seems to be the favorite and have slightly more accurate readings.
+
+The CR Touch is Creality's version of a BL Touch. The CR Touch comes with a metal push-pin over a plastic one which makes it more wear-resistance and heat-resistance, ensuring a longer lifespan.  
+
+https://www.amazon.com/CREALITY-Touch-Auto-Bed-Leveling/dp/B09MQ58D26
+
 ```c
 Starting and Ending GCode for Automatic Bed Leveler (3DTouch, BLTouch, CRTouch):
 
