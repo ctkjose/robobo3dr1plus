@@ -6,7 +6,7 @@ Straight from [wikipedia](https://en.wikipedia.org/wiki/AVR_microcontrollers) "A
 The ATMEGA328 (Arduino Uno), ATmega1280 and ATMEGA2560 (Arduino Mega) are both 8bit RISC microcontrollers running at 16MHz. 
 
 | CHIP | FLASH<br>MEMORY | SRAM | EEPROM | PORTS | DATA PINS | PWM PINS | Analog<br>Input Pins |
-| -- | -- | -- | -- | -- | -- | -- | -- |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | 328P | 32kb | 2kb | 1kb | 3<br>(B, C, D) | 14 | 6 | 6 |
 | 1280 | 128kb | 8kb | 4kb |  | 54 | 15 | 16 | 
 | 1280 | 128kb | 8kb | 4kb | 12<br>(A...L) | 54 | 15 | 16 |
@@ -169,7 +169,7 @@ Serial 1 is the USB port of the board.
 ## Serials ##
 
 | BOARD | PORT | RX | TX |
-| -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | MEGA | D | 19 | 18 |
 | UNO | D | 0 | 1 |
 
@@ -227,13 +227,13 @@ To talk to a particular peripheral, you'll make that peripheral's CS line low an
 The SPI control register `SPCR` has 8 bits, each of which control a particular SPI setting. 
 
 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
-| -- | -- | -- | -- | -- | -- | -- | -- |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | SPIE | SPE  | DORD | MSTR | CPOL | CPHA | SPR1 | SPR0 |
 
 The function of each bit is as follows:
 
 | Bit | Description |
-| -- | -- |
+| --- | --- |
 | 7 | **SPIE, SPI Interrupt Enable = 0**<br>If it is set to 1 the SPI will generate an interrupt. The `SPIF` (contant in Arduino) bit in the `SPSR` Register is set once a whole byte was shifted (read/written). The SPI clock will stop. | 
 | 6 | **SPE, SPI Enable = 1**<br>When the SPE bit is one, the SPI is enabled. This bit must be set to enable any SPI operations. |
 | 5 | **DORD, Data Order = 0**<br>When the DORD bit is one (DORD = 1), the LSB of the data word is transmitted first, otherwise the MSB of the data word is transmitted first. In Arduino there is a constant named `DORD` that has the bit position (0x5, B00000101) of the DORD in the SPCR. |
@@ -269,7 +269,7 @@ Use `SPI.setDataMode(mode)` to change the mode. The default is `SPI_MODE0`.
 ATmega Modes:
 
 | Mode | Arduino | Mask Value | Clock Polarity<br>(CPOL bit) | Clock Phase<br>(CPHA bit) | Leading Edge | Trailing Edge |
-| -- | -- | -- | -- | -- | -- | -- |
+| --- | --- | --- | --- | --- | --- | --- |
 | 0 | `SPI_MODE0` | 0x00, B00000000 | 0 | 0 | Sample Rising | Setup Failing |
 | 1 | `SPI_MODE1` | 0x04, B00000100 | 0 | 1 | Setup Rising | Sample Failing |
 | 2 | `SPI_MODE2` | 0x08, B00001000 | 1 | 0 | Sample Failing | Setup Rising |
@@ -289,7 +289,7 @@ SPCR = (SPCR & ~SPI_MODE_MASK) | mode;
 The clock frecuency of the SPI pulse is a proportion of the board's Oscillator clock frecuency (FOSC), that is the clock can be 1/2, 1/4, 1/8. 1/16, 1/32, 1/64, or 1/128. Each proportion corresponds to a combination of the SPR1 and SPR0 bits on the SPCR.
 
 | Proportion | SPR1 | SPR0 | SPI2X | Bit |
-| -- | -- | -- | -- | -- |
+| --- | --- | --- | --- | --- |
 | 1/2 | 0 | 0 | 0 | 0x0, 0, B0000 |
 | 1/4 | 0 | 0 | 1 | 0x1, 1, B0001 |
 | 1/8 | 0 | 1 | 0 | 0x2, 2, B0010 |

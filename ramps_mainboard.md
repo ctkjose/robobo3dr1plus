@@ -1,3 +1,5 @@
+# RAMPS 1.4 Boards
+
 A lot of boards used on 3D printers are direct decendant of RAMPS, and many are actually clones with different layouts, dedicated connectors or you will find minimal electrical changes (mosfest, power regulators, etc) but in excence they are the same and use the same pins as RAMPS. In many you will find that firmwares like Marlin simply treat them like RAMPS.
 
 ![RAMPS PINOUT](ramps_board_v14.png)
@@ -5,7 +7,7 @@ A lot of boards used on 3D printers are direct decendant of RAMPS, and many are 
 # Pinout of RAMPS based Boards #
 
 | Pin Name | Pin Number | Description | Ramps 1.x | Robo3D Ramps | Sunlo S8 | Marlin 1.x | Marlin 2.x |
-| -- | -- | -- | -- | -- | -- | -- | -- |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | D10 | 10 | 23PWM | Extruder 0 | 10 | 10<br>(On an R1+ board it may be labeled R1+ D9, but it uses D10) | 10 | HEATER_0_PIN | |
 | D8 | 8 | Hotbed | 8 | 8 | 8 | HEATER_BED_PIN | |
 | D9 | 9 | Print Cooling Fan | 9 | 9 | 9 | FAN_PIN | |
@@ -56,7 +58,7 @@ The ST7920 can NOT share the SPI bus, for this reason its usually connected to a
 The basic pinout for an ST7920 is as follows. Notice this may actually vary on the LCD board.
 
 | Pin Name | Pin Number | Description | Ramps 1.x | Robo3D Ramps | Sunlo S8 | MEGA 2560 | Marlin 1.x |
-| -- | -- | -- | -- | -- | -- | -- | -- |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | RS/CS | 17 | LCD Enable Trigger<br>Serial Clock/CS<br>MOSI | Aux-4, Pin 17 | Aux-4, Pin 17 | Exp-1, Pin 11 | D17/RX2 | LCD_PINS_ENABLE |
 | SID | 16 | LCD Read write control/SID | AUX-4, Pin 18 | AUX-4, Pin 18 | Exp-1, Pin 13 | D16/TX2 | LCD_PINS_RS |
 | D4/DB4 | 23 | Data Bus (4bit mode) | AUX-4, Pin 16 | AUX-4, Pin 16 | Exp-1, Pin 7 | LCD_PINS_D4 | |
@@ -79,7 +81,7 @@ The smart controller has two connectors EXP1 and EXP2 in the back. In many 3D pr
 The pin-out for the smart controller borrow from the previous section and adds the following PINs.
 
 | Pin Name | Pin Number | Description | Ramps 1.x | Robo3D Ramps | Sunlo S8 | MEGA 2560 | Marlin 1.x |
-| -- | -- | -- | -- | -- | -- | -- | -- |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | BTN EN1 | 31 | Button 1 Encoder | Aux-4, Pin 12 | Aux-4, Pin 12 | Exp-1, Pin 8 | D31 | BTN_EN1 |
 | BTN EN2 | 33 | Button 2 Encoder | Aux-4, Pin 11 | Aux-4, Pin 11 | Exp-1, Pin 10 | D33 | BTN_EN2 |
 | BTN EN | 35 | Button Switch | Aux-4, Pin 10 | Aux-4, Pin 10 | Exp-1, Pin 9 | D35 | BTN_EN |
@@ -89,7 +91,7 @@ The pin-out for the smart controller borrow from the previous section and adds t
 If the model you have has an SD-Card reader then the following PINS apply:
 
 | Pin Name | Pin Number | Description | Ramps 1.x | Robo3D Ramps | Sunlo S8 | MEGA 2560 | Marlin 1.x |
-| -- | -- | -- | -- | -- | -- | -- | -- |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | SCK | 52 | SD SCK | AUX-3, Pin 3 | AUX-3, Pin 3 | 52 (WI) | D52 | |
 | SD-CS/SS | 53 | SD CSEL/Serial/Enable Trigger | AUX-3, Pin 5 | AUX-3, Pin 5 | N/A | D53 | |
 | SD-MISO | 50 | SD-DO (MISO) | AUX-3, Pin 3 | AUX-3, Pin 3 | N/A | D50 | |

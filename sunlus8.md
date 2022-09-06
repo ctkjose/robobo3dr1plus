@@ -9,7 +9,7 @@ The Sunlu S8 follows the design (same kinematics) as the Ender 3 and CR-10S prin
 
 ### Mainboard ###
 
-The printer uses a [MKS](https://reprap.org/wiki/MKS_GEN_V1.1) like board. When it comes to asthetics and layout the board is mostly a cross-over with of  Creality CR10 boards, MKS Base 1.X and SKR.
+The printer uses a [MKS](https://reprap.org/wiki/MKS_GEN_V1.1) like board. When it comes to asthetics and layout the board is mostly a cross-over with of Creality Ender 3/CR10 boards, MKS Base 1.X and SKR.
 
 
 ![BOARD PINOUT](S8_PINOUT.png)
@@ -92,3 +92,99 @@ When you put together the printer make sure that your X-Z gantry is square. I us
 In my case a limit switch had the paddle loose. Check your limit switches to ensure the metal paddle sits properly in the slot. You also have a spare switch that came with the printer.
 
 Springs in the bed do NOT offer enough tension which makes it difficult to level the bed and to keep the bed leveled. Putting one or more nuts (or washers) allows a temporary fix to give you more tension to level the bed. By my experience and comments of others this is the first thing you need to replace if you want a happy relationship with this printer. Get some sturdy 20mm or 25mm springs, same as the ones used on CR10 and Ender3 printers.
+
+# Marlin Firmware
+
+Like we mentioned before your Sunlu S8 stock mainboard is a RAMPS 1.4 clone. All your firmware settings are simply RAMPS settings.
+
+On Marlin Firmware 1.x the mainboard is defined as `BOARD_MKS_BASE` in your `Configuration.h` file:
+
+```c
+#ifndef MOTHERBOARD
+  #define MOTHERBOARD BOARD_MKS_BASE
+#endif
+```
+
+The [MKS Base](https://reprap.org/wiki/MKS_BASE_1.0) mainboard is a single pcb that integrates the RAMPS 1.4 and the Arduino MEGA 2560.
+
+The pin configuration for an MKS Base is loaded from the file `pins_MKS_BASE.h` which in turns just loads the file `pins_RAMPS.h`. There is actually nothing applicable to the Sunlu S8 mainboard in the `pins_MKS_BASE.h`, all the fun is at `pins_RAMPS.h`.
+
+
+We can actually define our board as `BOARD_RAMPS_14_EFB` in our `Configuration.h` file for either the 1.x or 2.x firmware and everything will work just fine.
+
+```c
+#ifndef MOTHERBOARD
+  #define MOTHERBOARD BOARD_RAMPS_14_EFB
+#endif
+```
+
+> NOTE: The [MKS Base](https://reprap.org/wiki/MKS_BASE_1.0) mainboard is 
+> Note: A [MKS Gen L V1](sunlus8.md) and similar clones like [Sunlu S8 mainboard](sunlus8.md) are basically [RAMPS 1.4/1.6](ramps_mainboard.md) boards where the ATMEGA 2560 is bundle in a single board.<br><br>In Marlin Firmware 1.x the file `pins_MKS_BASE.h` all it does is include the `pins_RAMPS.h` file. Actual pins will be defined inside `pins_RAMPS.h`.
+
+> In Marlin Firmware 2.x the board `BOARD_RAMPS_14_EFB` will load `ramps/pins_RAMPS.h`.
+
+## Endstops
+
+> **Important:** Read my [wiki page](https://reprap.org/wiki/Mechanical_Endstop) at RepRap to learn more about endstops.
+
+Sunlu uses common  MakerBot V1.2 Endstops which have a resistor-capacitor circuit and a Pull-up Resistor.
+
+Nevertheless this endstops are wired as plain mechanical switches. That is the input (Common) is wired to ground and the output (the signal) is wired to the NC (Normally Closed) pin.
+
+That is the `S` pin is connected to the `NC/VCC` (NC, last pin on the endstop) and the `G` pin is connected to the `S` (first pin on the endstop).
+
+This means that when the endstop is not depressed a 5V (HIGH) will be seeing in the `S` pin and when the switch is pressed the `S` will go to 0V (LOW).
+
+In the Marline firmware we set `X_MIN_ENDSTOP_INVERTING`, `Y_MIN_ENDSTOP_INVERTING` and `Z_MIN_ENDSTOP_INVERTING` to `true`.
+
+
+
+## Filament Runout Sensor
+
+The filament runout sensor in Sunlu's S8 is just a plain switch (same as the one used for end stops) that is normally closed (NC). While there is filament the switch is depressed indicating that we have filament (high signal). When the filament runs out the switch is released and the signal goes low indicating that we ran out of filament. 
+
+In RAMPS boards the runout sensor is connected to pin `D4` (know as `SERVO3_PIN`) or to pin `D2` (know as `Z_MAX_PIN`).
+
+The Sunlu S8 mainboard has the plug "MT DET" (Material Breakage Detection) to connect the runout sensor. This plug is connected to pin `D2` in RAMPS. The pin `D2` is actually Z-Max Endstop.
+
+The actual pin is defined with `FIL_RUNOUT_PIN` in the firmware.
+
+### 1.x Firmware
+```c
+
+//#define FILAMENT_RUNOUT_SENSOR
+#if ENABLED(FILAMENT_RUNOUT_SENSOR)
+  #define NUM_RUNOUT_SENSORS   1 // Number of sensors.
+  #define FIL_RUNOUT_PULLUP // Use internal pullup for filament runout pins.
+  
+  #define FIL_RUNOUT_PIN 2 //connected to Z-Max endstop
+  
+  // Set one or more commands to execute on filament runout.
+  // (After 'M412 H' Marlin will ask the host to handle the process.)
+  #define FILAMENT_RUNOUT_SCRIPT "M600"
+
+  //By default the firmware assumes HIGH=FILAMENT PRESENT.
+  #define FIL_RUNOUT_INVERTING false // set to true to invert the logic of the sensor.
+
+#endif
+```
+
+### 2.x Firmware
+```c
+#if ENABLED(FILAMENT_RUNOUT_SENSOR)
+  #define NUM_RUNOUT_SENSORS   1 // Number of sensors.
+  #define FIL_RUNOUT_PULLUP // Use internal pullup for filament runout pins.
+  
+  #define FIL_RUNOUT_PIN 2 //connected to Z-Max endstop
+  
+  // Set one or more commands to execute on filament runout.
+  // (After 'M412 H' Marlin will ask the host to handle the process.)
+  #define FILAMENT_RUNOUT_SCRIPT "M600"
+  
+  //By default the firmware assumes HIGH=FILAMENT PRESENT.
+  #define FIL_RUNOUT_STATE LOW // Pin state indicating that filament is NOT present.
+  
+  
+  #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup.
+#endif
+```
