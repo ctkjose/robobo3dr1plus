@@ -1,17 +1,3 @@
-<style>
-fn { color: #5cd6ae; font-size: 1.5em; display: block; border-bottom: 1px solid #5cd6ae;  }
-.note_err {  border: 1px solid transparent; background-color: #f8d7da; color: #842029; border-color: #f5c2c7; font-size: 1em; display: block; position: relative; padding: 0.25rem 0.5rem; margin-bottom: 1rem; border-radius: .25rem; }
-
-.gcode {  border: 1px solid transparent; color: #055160;
-	background-color: #cff4fc;
-	border-color: #b6effb; font-size: 1em; position: relative; padding1: 0.25rem 0.25rem; margin-bottom: 1rem; border-radius: .25rem; }
-
-
-	
-</style>
-
-
-
 # BL-Touch
 
 Auto-bed leveling (ABL) is an excellent feature for 3D printers that can very accurately level your bed with almost no manual effort. Auto-bed leveling uses a sensor, usually attached to the nozzle, to measure the height of your bed at different points. These measurements are then used to create a leveling mesh to ensure that the nozzle maintains the same distance from the bed at all points during printing and thus compensating for warped bed or bad level.
