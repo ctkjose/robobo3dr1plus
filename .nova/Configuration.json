@@ -1,0 +1,13 @@
+{
+  "eablokker.tabsSidebar.config.collapsedFolders" : [
+
+  ],
+  "eablokker.tabsSidebar.config.customKindGroupsOrder" : [
+    "markdown"
+  ],
+  "eablokker.tabsSidebar.config.customTabOrder" : [
+    "file:\/\/\/Volumes\/X10\/3DPrinters\/robobo3dr1plus\/sunlus8.md",
+    "file:\/\/\/Volumes\/X10\/3DPrinters\/robobo3dr1plus\/bltouch.md",
+    "file:\/\/\/Volumes\/X10\/3DPrinters\/robobo3dr1plus\/sunlus8_microswiss_direct_drive_extruder.md"
+  ]
+}

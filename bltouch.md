@@ -5,7 +5,7 @@ Using an auto leveling sensor means that your prints are less susceptible to a b
 BL-Touch uses a hall sensor to detect minute movements of a probe pin against the surface of your printer bed. The BL-Touch was created by [ANTCLABS](https://www.antclabs.com/home) and it is one of the most popular sensors used for ABL.
 When using a  BL-Touch you still need to level your bed properly, but perhaps not as often.
 The quality of your BL-Touch sensor can vary drastically, buy an original from ANTCLABS or make sure you research the manufacturer very well and stick to well known brands on this one.
- 
+
 A BL-Touch may be confused with a 3D-Touch sensor. 3D-Touch is a sort of clone of the BL-Touch, they look the same and operate on the same principle/mechanics. The wiring has the same exact order but the colors of the wires can vary widely. They are pretty much interchangeable. The main difference is the quality of the materials. In general a quality 3D-Touch costs about the same as a quality BL-Touch, yet I found that BL-Touch are a bit more expensive.
 
 ## Placement
@@ -40,7 +40,7 @@ We need to measure the distance from the probe center to the nozzle center on th
 
 An X Offset to the left of the nozzle is always a negative value, if the sensor is on the right side of the nozzle it is a positive value.
 
-![Image1](images/image7.png)
+![Image1](images/bltouch_offset.png)
 
 If the probe is before the nozzle the Y Offset is a positive value and negative if it's behind the nozzle.
 
@@ -101,9 +101,7 @@ Wiring [Sunlu S8 Stock Mainboard](sunlus8.md) ([RAMPS 1.4](ramps_mainboard.md), 
 
 `#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN`
 
-This indicates that our z-probe cables (pin 4 and 5) are connected to our Z-endstop in the mainboard.
-
-This line must be commented (to disable it) when using a board that has a dedicated auto bed leveling connector (5-pin).
+This indicates that our z-probe cables (pin 4 and 5) are connected to our Z-endstop in the mainboard. Important `Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN` must be commented (to disable it) when your board has a dedicated auto bed leveling connector (5-pin) for the BLTouch.
 
 1.3. Uncomment AUTO_BED_LEVELING_BILINEAR (More Info):
 
@@ -164,12 +162,12 @@ With a newer version 2.x of the firmware we use the following:
 
 More [info](https://marlinfw.org/docs/gcode/M851.html) on setting the probe offset.
 
-## Digging deeper... 
+## Digging deeper...
 
 By default a BL Touch is assumed to use pin `D11` (a PWM pin) commonly known as "Servo 0" on RAMPS like boards.
 
 In Marlin each board has a  pins_BOARDNAME.h where "boardname" is the actual name of the board used in Marlin (see list of boards here).
-  
+
 Your board is defined in your Configuration.h file in a line like this:
 
 ```c
@@ -184,15 +182,4 @@ In this case the file `pins_RAMPS.h` will be used by Marlin. In this file we wil
 #define SERVO0_PIN 11    //RAMPS 1.4
 ```
 
-Marlin knows which servo to use for Z probe using the following line in Configuration.h:
-
-```c
-/* Z Servo Probe*/
-#define Z_PROBE_SERVO_NR 0   //default is zero
-```
-
-On RAMPS like boards `Z_MIN_PIN` is  pin number 18. The `Z_MIN_PIN` is configured in your `pins_MKS_BASE.h` file or your corresponding board file.
-
-> Note: A [MKS Gen L V1](sunlus8.md) and similar clones like [Sunlu S8 mainboard](sunlus8.md) are basically [RAMPS 1.4/1.6](ramps_mainboard.md) boards where the ATMEGA 2560 is bundle in a single board.<br><br>In Marlin Firmware 1.x the file `pins_MKS_BASE.h` all it does is include the `pins_RAMPS.h` file. Actual pins will be defined inside `pins_RAMPS.h`.
-
-> Note: In Marlin Firmware 2.x Sunlu S8's mainboard is configured as `BOARD_RAMPS_14_EFB` which will load `ramps/pins_RAMPS.h`.
+Marlin knows which servo to use for Z probe using the value of `Z_PROBE_SERVO_NR` in Configuration.h. The value of `Z_PROBE_SERVO_NR` is set automatically by Marlin when you enabled `#define BLTOUCH`.
